@@ -1,29 +1,64 @@
-import React, {
+import {
     type ChangeEvent,
     type DetailedHTMLProps,
     type FC,
     type FocusEvent,
     type FormEventHandler,
     type InputHTMLAttributes,
+    type KeyboardEvent,
+    type MouseEvent,
     type RefObject,
     useCallback,
     useEffect,
     useRef,
     useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useId } from '../../hooks/use-id';
 import { useTranslation } from '../../i18n/use-translation';
 import { ResolvedTheme } from '../../themes';
+import { focus } from '../../utils/css-state';
 import { DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { FieldContainer } from '../field-container';
-import { responsiveInputsStyle } from '../text-input/styles';
 import { ToggletipProps } from '../toggletip';
 import { TooltipProps } from '../tooltip';
-import { StepperButtons } from './stepper-buttons';
 import { type RequiredLabelProps } from '../label/label';
+import { StepperButton } from './stepper-button';
 
-const Wrapper = styled.div`
+function getWrapperWidth(device: DeviceContextProps, readOnly?: boolean): string {
+    if (readOnly || !device.isMobile) {
+        return 'auto';
+    }
+
+    return '10rem';
+}
+
+function getInputWidth(device: DeviceContextProps, readOnly?: boolean): string {
+    if (readOnly || !device.isMobile) {
+        return '3rem';
+    }
+
+    return 'auto';
+}
+
+function getInputFlex(device: DeviceContextProps, readOnly?: boolean): string {
+    if (readOnly || !device.isMobile) {
+        return '0 0 auto';
+    }
+
+    return '1 0 0';
+}
+
+const Wrapper = styled.div<{ device: DeviceContextProps; $readOnly?: boolean }>`
+    display: flex;
+    isolation: isolate;
+    max-width: fit-content;
+    width: ${({ device, $readOnly }) => getWrapperWidth(device, $readOnly)};
+`;
+
+const ReadOnlyWrapper = styled.div`
+    background-color: ${({ theme }) => theme.component['text-input-readonly-background-color']};
+    border-radius: var(--border-radius);
     display: flex;
     max-width: fit-content;
 `;
@@ -31,15 +66,41 @@ const Wrapper = styled.div`
 interface StyledInputProps {
     device: DeviceContextProps;
     theme: ResolvedTheme;
+    $readOnly?: boolean;
+    $valid?: boolean;
 }
 
-const StyledInput = styled.input<StyledInputProps>`
-    ${responsiveInputsStyle}
-
-    border-radius: ${({ device }) => (device.isMobile ? 'var(--border-radius)' : 'var(--border-radius) 0 0 var(--border-radius)')};
-    height: ${({ device }) => (device.isMobile ? 2.5 : 2)}rem;
-    width: ${({ device }) => (device.isMobile ? 10.25 : 3.5)}rem;
-    z-index: 1;
+const inputSegmentStyles = css<StyledInputProps>`
+    background-color: ${({ theme, $readOnly }) => (
+        $readOnly
+            ? theme.component['text-input-readonly-background-color']
+            : theme.component['text-input-background-color']
+    )};
+    border-color: ${({ theme, $valid, $readOnly }) => {
+        if ($readOnly) {
+            return theme.component['text-input-readonly-border-color'];
+        }
+        return $valid
+            ? theme.component['text-input-border-color']
+            : theme.component['text-input-error-border-color'];
+    }};
+    box-sizing: border-box;
+    color: ${({ theme, $readOnly }) => (
+        $readOnly
+            ? theme.component['text-input-readonly-text-color']
+            : theme.component['text-input-text-color']
+    )};
+    font-family: inherit;
+    font-size: ${({ device }) => (device.isMobile ? '1rem' : '0.875rem')};
+    height: ${({ device }) => (device.isMobile ? '3rem' : 'var(--size-2x)')};
+    letter-spacing: ${({ device }) => (device.isMobile ? '0.02875rem' : '0.015rem')};
+    line-height: 1.5rem;
+    margin: 0;
+    outline: none;
+    padding: ${({ device }) => (device.isMobile ? '0 var(--spacing-1x)' : '0 var(--spacing-1x)')};
+    text-align: center;
+    width: ${({ device, $readOnly }) => getInputWidth(device, $readOnly)};
+    z-index: 2;
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -50,6 +111,38 @@ const StyledInput = styled.input<StyledInputProps>`
     &[type='number'] {
         -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
     }
+
+    &:disabled {
+        background-color: ${({ theme }) => theme.component['text-input-disabled-background-color']};
+        border-color: ${({ theme }) => theme.component['text-input-disabled-border-color']};
+        color: ${({ theme }) => theme.component['text-input-disabled-text-color']};
+    }
+
+    &:read-only {
+        background-color: ${({ theme }) => theme.component['text-input-readonly-background-color']};
+        border-color: ${({ theme }) => theme.component['text-input-readonly-border-color']};
+        color: ${({ theme }) => theme.component['text-input-readonly-text-color']};
+    }
+`;
+
+const StyledInput = styled.input<StyledInputProps>`
+    ${inputSegmentStyles};
+
+    border-style: solid;
+    border-width: 1px;
+    flex: ${({ device, $readOnly }) => getInputFlex(device, $readOnly)};
+
+    ${({ $readOnly }) => !$readOnly && css`
+        border-left: none;
+        border-radius: 0;
+        border-right: none;
+    `};
+
+    ${({ $readOnly }) => $readOnly && css`
+        border-radius: var(--border-radius);
+    `};
+
+    ${({ $readOnly, theme }) => !$readOnly && focus({ theme })};
 `;
 
 type PartialStepperInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -65,6 +158,7 @@ export interface StepperInputProps extends PartialStepperInputProps {
     max?: number;
     min?: number;
     noMargin?: boolean;
+    readOnly?: boolean;
     tooltip?: TooltipProps;
     toggletip?: ToggletipProps;
     valid?: boolean;
@@ -81,6 +175,14 @@ function triggerChangeEventOnRef(ref: RefObject<HTMLInputElement>): void {
     ref.current?.dispatchEvent(new Event('change', { bubbles: true }));
 }
 
+function isAtMin(value: Value, min: number | undefined): boolean {
+    return min !== undefined && value !== null && value !== undefined && value <= min;
+}
+
+function isAtMax(value: Value, max: number | undefined): boolean {
+    return max !== undefined && value !== null && value !== undefined && value >= max;
+}
+
 export const StepperInput: FC<StepperInputProps> = ({
     defaultValue,
     disabled,
@@ -90,6 +192,7 @@ export const StepperInput: FC<StepperInputProps> = ({
     max,
     min,
     noMargin,
+    readOnly,
     step,
     tooltip,
     toggletip,
@@ -109,36 +212,61 @@ export const StepperInput: FC<StepperInputProps> = ({
     const intervalId = useRef<NodeJS.Timeout>();
     const timeoutId = useRef<NodeJS.Timeout>();
     const [validity, setValidity] = useState(valid ?? true);
+    const [internalValue, setInternalValue] = useState<Value>(defaultValue ?? null);
 
-    function handleIncrement(event: React.MouseEvent<HTMLButtonElement>): void {
-        if (event.button !== 0) return;
-        const valueBefore = Number(inputRef.current?.value);
-        inputRef.current?.stepUp();
-        timeoutId.current = setTimeout(() => {
-            intervalId.current = setInterval(() => inputRef.current?.stepUp(), 50);
-        }, 500);
-        const valueAfter = Number(inputRef.current?.value);
+    const currentValue = value !== undefined ? value : internalValue;
+    const showButtons = !readOnly;
+    const isDecrementDisabled = disabled || isAtMin(currentValue, min);
+    const isIncrementDisabled = disabled || isAtMax(currentValue, max);
 
-        if (valueBefore !== valueAfter) {
-            triggerChangeEventOnRef(inputRef);
+    const stepValue = useCallback((direction: 'up' | 'down'): void => {
+        if (direction === 'up') {
+            inputRef.current?.stepUp();
+        } else {
+            inputRef.current?.stepDown();
         }
-    }
+        triggerChangeEventOnRef(inputRef);
+    }, []);
 
-    function handleDecrement(event: React.MouseEvent<HTMLButtonElement>): void {
-        if (event.button !== 0) return;
+    const handleStep = useCallback((
+        direction: 'up' | 'down',
+        event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
+    ): void => {
+        if ('button' in event && event.button !== 0) return;
+        if (direction === 'up' && isIncrementDisabled) return;
+        if (direction === 'down' && isDecrementDisabled) return;
+
         const valueBefore = Number(inputRef.current?.value);
-        inputRef.current?.stepDown();
-        timeoutId.current = setTimeout(() => {
-            intervalId.current = setInterval(() => inputRef.current?.stepDown(), 50);
-        }, 500);
-        const valueAfter = Number(inputRef.current?.value);
+        stepValue(direction);
 
-        if (valueBefore !== valueAfter) {
-            triggerChangeEventOnRef(inputRef);
+        if ('type' in event && event.type === 'mousedown') {
+            timeoutId.current = setTimeout(() => {
+                intervalId.current = setInterval(() => stepValue(direction), 50);
+            }, 500);
         }
-    }
 
-    function handleStop(): void {
+        const valueAfter = Number(inputRef.current?.value);
+        if (valueBefore !== valueAfter) {
+            const nextValue = inputRef.current?.value === '' ? null : Number(inputRef.current?.value);
+            if (value === undefined) {
+                setInternalValue(nextValue);
+            }
+        }
+    }, [isDecrementDisabled, isIncrementDisabled, stepValue, value]);
+
+    const handleIncrement = useCallback((
+        event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
+    ): void => {
+        handleStep('up', event);
+    }, [handleStep]);
+
+    const handleDecrement = useCallback((
+        event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
+    ): void => {
+        handleStep('down', event);
+    }, [handleStep]);
+
+    const handleStop = useCallback((): void => {
         if (timeoutId.current) {
             clearTimeout(timeoutId.current);
             timeoutId.current = undefined;
@@ -147,15 +275,21 @@ export const StepperInput: FC<StepperInputProps> = ({
             clearInterval(intervalId.current);
             intervalId.current = undefined;
         }
-    }
+    }, []);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         const inputValue: string = event.target.value;
         if (inputValue === '') {
+            if (value === undefined) {
+                setInternalValue(null);
+            }
             onChange?.(null);
         } else {
-            const currentValue = Number(inputValue);
-            onChange?.(currentValue);
+            const nextValue = Number(inputValue);
+            if (value === undefined) {
+                setInternalValue(nextValue);
+            }
+            onChange?.(nextValue);
         }
     };
 
@@ -177,55 +311,84 @@ export const StepperInput: FC<StepperInputProps> = ({
         }
     }, [valid]);
 
+    const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+        }
+    }, []);
+
     useEffect(() => {
         if (valid !== undefined) {
             setValidity(valid);
         }
     }, [valid]);
 
+    useEffect(() => () => handleStop(), [handleStop]);
+
+    const inputElement = (
+        <StyledInput
+            $readOnly={readOnly}
+            $valid={validity}
+            aria-invalid={!validity}
+            data-testid="stepper-input"
+            defaultValue={defaultValue}
+            device={device}
+            disabled={disabled}
+            id={fieldId}
+            max={max}
+            min={min}
+            readOnly={readOnly}
+            ref={inputRef}
+            required={required}
+            step={step}
+            type="number"
+            value={value === null ? '' : value}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            onFocus={onFocus}
+            onInvalid={handleOnInvalid}
+            onKeyDown={handleKeyDown}
+        />
+    );
+
     return (
         <FieldContainer
             fieldId={fieldId}
             hint={hint}
             label={label}
-            tooltip={tooltip}
-            toggletip={toggletip}
             noMargin={noMargin}
             required={required}
             requiredLabelType={requiredLabelType}
+            toggletip={toggletip}
+            tooltip={tooltip}
             valid={validity}
             validationErrorMessage={validationErrorMessage || t('validationErrorMessage')}
         >
-            <Wrapper>
-                <StyledInput
-                    aria-invalid={!validity}
-                    data-testid="stepper-input"
-                    defaultValue={defaultValue}
-                    device={device}
-                    disabled={disabled}
-                    id={fieldId}
-                    max={max}
-                    min={min}
-                    name="points"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    onFocus={onFocus}
-                    onInvalid={handleOnInvalid}
-                    ref={inputRef}
-                    required={required}
-                    step={step}
-                    type="number"
-                    value={value === null ? '' : value}
-                />
-                {!device.isMobile && (
-                    <StepperButtons
-                        disabled={disabled}
-                        onDecrement={handleDecrement}
-                        onIncrement={handleIncrement}
-                        onStop={handleStop}
-                    />
-                )}
-            </Wrapper>
+            {readOnly ? (
+                <ReadOnlyWrapper data-testid="stepper-input-readonly">
+                    {inputElement}
+                </ReadOnlyWrapper>
+            ) : (
+                <Wrapper device={device} role="group" aria-labelledby={label ? `${fieldId}_label` : undefined}>
+                    {showButtons && (
+                        <StepperButton
+                            disabled={isDecrementDisabled}
+                            type="decrement"
+                            onPress={handleDecrement}
+                            onStop={handleStop}
+                        />
+                    )}
+                    {inputElement}
+                    {showButtons && (
+                        <StepperButton
+                            disabled={isIncrementDisabled}
+                            type="increment"
+                            onPress={handleIncrement}
+                            onStop={handleStop}
+                        />
+                    )}
+                </Wrapper>
+            )}
         </FieldContainer>
     );
 };

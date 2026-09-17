@@ -3,6 +3,11 @@ import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { StepperInput } from './stepper-input';
 
+const VALIDATION_ERROR_MESSAGE = 'This field is required';
+const INVALID_FIELD_TEST_ID = 'invalid-field';
+const STEPPER_INPUT_TEST_ID = 'stepper-input';
+const SUBMIT_BUTTON_TEST_ID = 'submit-button';
+
 describe('Stepper input', () => {
     it('should not show validation message when input is empty and required onBlur', async () => {
         renderWithProviders(
@@ -74,5 +79,72 @@ describe('Stepper input', () => {
         const { container } = renderWithProviders(<StepperInput label="test" disabled />);
 
         expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches snapshot (read-only)', () => {
+        const { container } = renderWithProviders(<StepperInput label="test" readOnly value={3} />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('renders stepper buttons on mobile', () => {
+        renderWithProviders(<StepperInput label="test" />, 'mobile');
+
+        expect(screen.getByTestId('stepper-button-decrement')).toBeInTheDocument();
+        expect(screen.getByTestId('stepper-button-increment')).toBeInTheDocument();
+    });
+
+    it('does not render stepper buttons when read-only', () => {
+        renderWithProviders(<StepperInput label="test" readOnly value={2} />);
+
+        expect(screen.queryByTestId('stepper-button-decrement')).toBeNull();
+        expect(screen.queryByTestId('stepper-button-increment')).toBeNull();
+        expect(screen.getByTestId('stepper-input-readonly')).toBeInTheDocument();
+    });
+
+    it('disables increment button when value equals max', () => {
+        renderWithProviders(<StepperInput max={5} value={5} />);
+
+        expect(screen.getByTestId('stepper-button-increment')).toBeDisabled();
+        expect(screen.getByTestId('stepper-button-decrement')).not.toBeDisabled();
+    });
+
+    it('disables decrement button when value equals min', () => {
+        renderWithProviders(<StepperInput min={0} value={0} />);
+
+        expect(screen.getByTestId('stepper-button-decrement')).toBeDisabled();
+        expect(screen.getByTestId('stepper-button-increment')).not.toBeDisabled();
+    });
+
+    it('shows validation error message when valid is false', () => {
+        renderWithProviders(
+            <StepperInput
+                label="test"
+                valid={false}
+                validationErrorMessage={VALIDATION_ERROR_MESSAGE}
+            />,
+        );
+
+        expect(screen.getByTestId(INVALID_FIELD_TEST_ID)).toHaveTextContent(VALIDATION_ERROR_MESSAGE);
+    });
+
+    it('does not submit the form when Enter is pressed in the input', async () => {
+        const onSubmit = jest.fn();
+        renderWithProviders(
+            <form onSubmit={(event) => {
+                event.preventDefault();
+                onSubmit();
+            }}
+            >
+                <StepperInput defaultValue={1} label="test" />
+                <button data-testid={SUBMIT_BUTTON_TEST_ID} type="submit">Submit</button>
+            </form>,
+        );
+
+        const input = screen.getByTestId(STEPPER_INPUT_TEST_ID);
+        await userEvent.click(input);
+        await userEvent.keyboard('{Enter}');
+
+        expect(onSubmit).not.toHaveBeenCalled();
     });
 });

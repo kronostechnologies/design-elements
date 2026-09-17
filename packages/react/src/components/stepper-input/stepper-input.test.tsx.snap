@@ -35,16 +35,58 @@ input + .c1 {
   margin-bottom: var(--spacing-quarter);
 }
 
-.c5 {
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  color: #60666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-2x);
-  width: 1.4375rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: var(--spacing-1x);
+  width: var(--size-2x);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  z-index: 1;
+}
+
+.c4:hover:not(:disabled) {
+  background-color: #DBDEE1;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  z-index: 3;
+}
+
+.c4 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c6 {
@@ -54,23 +96,27 @@ input + .c1 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   color: #60666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0 var(--spacing-half);
-  border-bottom: none;
-  border-radius: 0 var(--border-radius) 0 0;
-  height: calc(50% - 1px);
+  padding: var(--spacing-1x);
+  width: var(--size-2x);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  z-index: 1;
 }
 
-.c6:hover {
+.c6:hover:not(:disabled) {
   background-color: #DBDEE1;
 }
 
@@ -78,6 +124,7 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c6:focus-visible {
@@ -86,59 +133,12 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6:focus {
-  z-index: 1000;
+.c6:focus-visible {
+  z-index: 3;
 }
 
 .c6 > svg {
   color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-left: none;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0 var(--spacing-half);
-  border-radius: 0 0 var(--border-radius) 0;
-  height: calc(50% + 1px);
-}
-
-.c7:hover {
-  background-color: #DBDEE1;
-}
-
-.c7:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c7:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #99C0D5;
-  outline-offset: -2px;
-}
-
-.c7:focus {
-  z-index: 1000;
-}
-
-.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -148,19 +148,21 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  isolation: isolate;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  width: auto;
 }
 
-.c4 {
+.c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
+  border-color: #60666E;
   box-sizing: border-box;
   color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
+  height: var(--size-2x);
   -webkit-letter-spacing: 0.015rem;
   -moz-letter-spacing: 0.015rem;
   -ms-letter-spacing: 0.015rem;
@@ -168,70 +170,52 @@ input + .c1 {
   line-height: 1.5rem;
   margin: 0;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-1x);
-  width: 100%;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  height: 2rem;
-  width: 3.5rem;
-  z-index: 1;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+  width: 3rem;
+  z-index: 2;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  border-left: none;
+  border-radius: 0;
+  border-right: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: #60666E;
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.c4::-moz-placeholder {
-  color: #60666E;
+.c5[type='number'] {
+  -moz-appearance: textfield;
 }
 
-.c4:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c4::placeholder {
-  color: #60666E;
-}
-
-.c4:disabled {
+.c5:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
+.c5:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
-  color: #B7BBC2;
+.c5:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c4:focus-visible {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c4[type='number'] {
-  -moz-appearance: textfield;
 }
 
 <div
@@ -245,76 +229,74 @@ input + .c1 {
     test
   </label>
   <div
+    aria-labelledby="uuid1_label"
     class="c3"
+    role="group"
   >
+    <button
+      aria-label="Decrease number"
+      class="c4"
+      data-testid="stepper-button-decrement"
+      disabled=""
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-minus"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </button>
     <input
       aria-invalid="false"
-      class="c4"
+      class="c5"
       data-testid="stepper-input"
       disabled=""
       id="uuid1"
-      name="points"
       type="number"
       value=""
     />
-    <div
-      class="c5"
+    <button
+      aria-label="Increase number"
+      class="c6"
+      data-testid="stepper-button-increment"
+      disabled=""
+      type="button"
     >
-      <button
-        aria-label="Increase number"
-        class="c6"
-        data-testid="stepper-button-increment"
-        disabled=""
-        tabindex="-1"
-        type="button"
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-plus"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-up"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m18 15-6-6-6 6"
-          />
-        </svg>
-      </button>
-      <button
-        aria-label="Decrease number"
-        class="c7"
-        data-testid="stepper-button-decrement"
-        disabled=""
-        tabindex="-1"
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-down"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m6 9 6 6 6-6"
-          />
-        </svg>
-      </button>
-    </div>
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="M12 5v14"
+        />
+      </svg>
+    </button>
   </div>
 </div>
 `;
@@ -380,16 +362,58 @@ input + .c1 {
   margin-bottom: var(--spacing-quarter);
 }
 
-.c7 {
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  color: #60666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-2x);
-  width: 1.4375rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: var(--spacing-1x);
+  width: var(--size-2x);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  z-index: 1;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #DBDEE1;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c6:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c6:focus-visible {
+  z-index: 3;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c8 {
@@ -399,23 +423,27 @@ input + .c1 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   color: #60666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0 var(--spacing-half);
-  border-bottom: none;
-  border-radius: 0 var(--border-radius) 0 0;
-  height: calc(50% - 1px);
+  padding: var(--spacing-1x);
+  width: var(--size-2x);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  z-index: 1;
 }
 
-.c8:hover {
+.c8:hover:not(:disabled) {
   background-color: #DBDEE1;
 }
 
@@ -423,6 +451,7 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c8:focus-visible {
@@ -431,59 +460,12 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c8:focus {
-  z-index: 1000;
+.c8:focus-visible {
+  z-index: 3;
 }
 
 .c8 > svg {
   color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-left: none;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0 var(--spacing-half);
-  border-radius: 0 0 var(--border-radius) 0;
-  height: calc(50% + 1px);
-}
-
-.c9:hover {
-  background-color: #DBDEE1;
-}
-
-.c9:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c9:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #99C0D5;
-  outline-offset: -2px;
-}
-
-.c9:focus {
-  z-index: 1000;
-}
-
-.c9 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -493,19 +475,21 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  isolation: isolate;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  width: auto;
 }
 
-.c6 {
+.c7 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
+  border-color: #CD2C23;
   box-sizing: border-box;
   color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
+  height: var(--size-2x);
   -webkit-letter-spacing: 0.015rem;
   -moz-letter-spacing: 0.015rem;
   -ms-letter-spacing: 0.015rem;
@@ -513,70 +497,52 @@ input + .c1 {
   line-height: 1.5rem;
   margin: 0;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-1x);
-  width: 100%;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  height: 2rem;
-  width: 3.5rem;
-  z-index: 1;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+  width: 3rem;
+  z-index: 2;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  border-left: none;
+  border-radius: 0;
+  border-right: none;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #60666E;
+.c7::-webkit-outer-spin-button,
+.c7::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.c6::-moz-placeholder {
-  color: #60666E;
+.c7[type='number'] {
+  -moz-appearance: textfield;
 }
 
-.c6:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c6::placeholder {
-  color: #60666E;
-}
-
-.c6:disabled {
+.c7:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c6:disabled,
-.c6:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
+.c7:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
-.c6:disabled,
-.c6:disabled::-moz-placeholder {
-  color: #B7BBC2;
+.c7:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
-.c6:disabled,
-.c6:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c6:disabled,
-.c6:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c6:focus-visible {
+.c7:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c6::-webkit-outer-spin-button,
-.c6::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c6[type='number'] {
-  -moz-appearance: textfield;
 }
 
 <div
@@ -621,73 +587,71 @@ input + .c1 {
     Invalid number
   </span>
   <div
+    aria-labelledby="uuid1_label"
     class="c5"
+    role="group"
   >
+    <button
+      aria-label="Decrease number"
+      class="c6"
+      data-testid="stepper-button-decrement"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-minus"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </button>
     <input
       aria-invalid="true"
-      class="c6"
+      class="c7"
       data-testid="stepper-input"
       id="uuid1"
-      name="points"
       type="number"
       value=""
     />
-    <div
-      class="c7"
+    <button
+      aria-label="Increase number"
+      class="c8"
+      data-testid="stepper-button-increment"
+      type="button"
     >
-      <button
-        aria-label="Increase number"
-        class="c8"
-        data-testid="stepper-button-increment"
-        tabindex="-1"
-        type="button"
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-plus"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-up"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m18 15-6-6-6 6"
-          />
-        </svg>
-      </button>
-      <button
-        aria-label="Decrease number"
-        class="c9"
-        data-testid="stepper-button-decrement"
-        tabindex="-1"
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-down"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m6 9 6 6 6-6"
-          />
-        </svg>
-      </button>
-    </div>
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="M12 5v14"
+        />
+      </svg>
+    </button>
   </div>
 </div>
 `;
@@ -727,7 +691,307 @@ input + .c1 {
   margin-bottom: var(--spacing-quarter);
 }
 
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 3rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: var(--spacing-1x);
+  width: 3rem;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  z-index: 1;
+}
+
+.c4:hover:not(:disabled) {
+  background-color: #DBDEE1;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  z-index: 3;
+}
+
+.c4 > svg {
+  color: inherit;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  color: #60666E;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 3rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: var(--spacing-1x);
+  width: 3rem;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  z-index: 1;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #DBDEE1;
+}
+
+.c6:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c6:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c6:focus-visible {
+  z-index: 3;
+}
+
+.c6 > svg {
+  color: inherit;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  isolation: isolate;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  width: 10rem;
+}
+
+.c5 {
+  background-color: #FFFFFF;
+  border-color: #60666E;
+  box-sizing: border-box;
+  color: #1B1C1E;
+  font-family: inherit;
+  font-size: 1rem;
+  height: 3rem;
+  -webkit-letter-spacing: 0.02875rem;
+  -moz-letter-spacing: 0.02875rem;
+  -ms-letter-spacing: 0.02875rem;
+  letter-spacing: 0.02875rem;
+  line-height: 1.5rem;
+  margin: 0;
+  outline: none;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+  width: auto;
+  z-index: 2;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-flex: 1 0 0;
+  -ms-flex: 1 0 0;
+  flex: 1 0 0;
+  border-left: none;
+  border-radius: 0;
+  border-right: none;
+}
+
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c5[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.c5:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c5:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c5:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    for="uuid1"
+    id="uuid1_label"
+  >
+    test
+  </label>
+  <div
+    aria-labelledby="uuid1_label"
+    class="c3"
+    role="group"
+  >
+    <button
+      aria-label="Decrease number"
+      class="c4"
+      data-testid="stepper-button-decrement"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-minus"
+        fill="none"
+        focusable="false"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </button>
+    <input
+      aria-invalid="false"
+      class="c5"
+      data-testid="stepper-input"
+      id="uuid1"
+      type="number"
+      value=""
+    />
+    <button
+      aria-label="Increase number"
+      class="c6"
+      data-testid="stepper-button-increment"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-plus"
+        fill="none"
+        focusable="false"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="M12 5v14"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Stepper input matches snapshot (read-only) 1`] = `
+.c2 {
+  color: #1B1C1E;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: var(--font-normal);
+  -webkit-letter-spacing: 0.02rem;
+  -moz-letter-spacing: 0.02rem;
+  -ms-letter-spacing: 0.02rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+input + .c1 {
+  margin-left: var(--spacing-half);
+}
+
+.c0 {
+  margin: 0 0 var(--spacing-3x);
+}
+
+.c0 input,
+.c0 select,
+.c0 textarea {
+  border-color: #60666E;
+}
+
+.c0 > :nth-child(1) {
+  margin-bottom: var(--spacing-quarter);
+}
+
+.c3 {
+  background-color: rgb(0 0 0 / 0.03);
+  border-radius: var(--border-radius);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -738,74 +1002,30 @@ input + .c1 {
 }
 
 .c4 {
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
   box-sizing: border-box;
   color: #1B1C1E;
   font-family: inherit;
-  font-size: 1rem;
-  -webkit-letter-spacing: 0.02875rem;
-  -moz-letter-spacing: 0.02875rem;
-  -ms-letter-spacing: 0.02875rem;
-  letter-spacing: 0.02875rem;
+  font-size: 0.875rem;
+  height: var(--size-2x);
+  -webkit-letter-spacing: 0.015rem;
+  -moz-letter-spacing: 0.015rem;
+  -ms-letter-spacing: 0.015rem;
+  letter-spacing: 0.015rem;
   line-height: 1.5rem;
   margin: 0;
   outline: none;
-  padding: var(--spacing-1x);
-  width: 100%;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+  width: 3rem;
+  z-index: 2;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   border-radius: var(--border-radius);
-  height: 2.5rem;
-  width: 10.25rem;
-  z-index: 1;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #60666E;
-}
-
-.c4::-moz-placeholder {
-  color: #60666E;
-}
-
-.c4:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c4::placeholder {
-  color: #60666E;
-}
-
-.c4:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c4:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #99C0D5;
-  outline-offset: -2px;
 }
 
 .c4::-webkit-outer-spin-button,
@@ -816,6 +1036,24 @@ input + .c1 {
 
 .c4[type='number'] {
   -moz-appearance: textfield;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+}
+
+.c4:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
+}
+
+.c4:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
 <div
@@ -830,15 +1068,16 @@ input + .c1 {
   </label>
   <div
     class="c3"
+    data-testid="stepper-input-readonly"
   >
     <input
       aria-invalid="false"
       class="c4"
       data-testid="stepper-input"
       id="uuid1"
-      name="points"
+      readonly=""
       type="number"
-      value=""
+      value="3"
     />
   </div>
 </div>
@@ -879,16 +1118,58 @@ input + .c1 {
   margin-bottom: var(--spacing-quarter);
 }
 
-.c5 {
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #60666E;
+  color: #60666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   height: var(--size-2x);
-  width: 1.4375rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: var(--spacing-1x);
+  width: var(--size-2x);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  z-index: 1;
+}
+
+.c4:hover:not(:disabled) {
+  background-color: #DBDEE1;
+}
+
+.c4:disabled {
+  background-color: #F1F2F2;
+  border-color: #B7BBC2;
+  color: #B7BBC2;
+  cursor: not-allowed;
+}
+
+.c4:focus-visible {
+  box-shadow: 0 0 0 2px #006296;
+  outline: 2px solid #99C0D5;
+  outline-offset: -2px;
+}
+
+.c4:focus-visible {
+  z-index: 3;
+}
+
+.c4 > svg {
+  color: inherit;
+  height: var(--size-1x);
+  width: var(--size-1x);
 }
 
 .c6 {
@@ -898,23 +1179,27 @@ input + .c1 {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid #60666E;
-  border-left: none;
   color: #60666E;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: var(--size-2x);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0 var(--spacing-half);
-  border-bottom: none;
-  border-radius: 0 var(--border-radius) 0 0;
-  height: calc(50% - 1px);
+  padding: var(--spacing-1x);
+  width: var(--size-2x);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  z-index: 1;
 }
 
-.c6:hover {
+.c6:hover:not(:disabled) {
   background-color: #DBDEE1;
 }
 
@@ -922,6 +1207,7 @@ input + .c1 {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
+  cursor: not-allowed;
 }
 
 .c6:focus-visible {
@@ -930,59 +1216,12 @@ input + .c1 {
   outline-offset: -2px;
 }
 
-.c6:focus {
-  z-index: 1000;
+.c6:focus-visible {
+  z-index: 3;
 }
 
 .c6 > svg {
   color: inherit;
-  height: var(--size-1x);
-  width: var(--size-1x);
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-left: none;
-  color: #60666E;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0 var(--spacing-half);
-  border-radius: 0 0 var(--border-radius) 0;
-  height: calc(50% + 1px);
-}
-
-.c7:hover {
-  background-color: #DBDEE1;
-}
-
-.c7:disabled {
-  background-color: #F1F2F2;
-  border-color: #B7BBC2;
-  color: #B7BBC2;
-}
-
-.c7:focus-visible {
-  box-shadow: 0 0 0 2px #006296;
-  outline: 2px solid #99C0D5;
-  outline-offset: -2px;
-}
-
-.c7:focus {
-  z-index: 1000;
-}
-
-.c7 > svg {
   height: var(--size-1x);
   width: var(--size-1x);
 }
@@ -992,19 +1231,21 @@ input + .c1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  isolation: isolate;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  width: auto;
 }
 
-.c4 {
+.c5 {
   background-color: #FFFFFF;
-  border: 1px solid #60666E;
-  border-radius: var(--border-radius);
+  border-color: #60666E;
   box-sizing: border-box;
   color: #1B1C1E;
   font-family: inherit;
   font-size: 0.875rem;
+  height: var(--size-2x);
   -webkit-letter-spacing: 0.015rem;
   -moz-letter-spacing: 0.015rem;
   -ms-letter-spacing: 0.015rem;
@@ -1012,70 +1253,52 @@ input + .c1 {
   line-height: 1.5rem;
   margin: 0;
   outline: none;
-  padding: var(--spacing-half) var(--spacing-1x);
-  width: 100%;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
-  height: 2rem;
-  width: 3.5rem;
-  z-index: 1;
+  padding: 0 var(--spacing-1x);
+  text-align: center;
+  width: 3rem;
+  z-index: 2;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  border-left: none;
+  border-radius: 0;
+  border-right: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: #60666E;
+.c5::-webkit-outer-spin-button,
+.c5::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.c4::-moz-placeholder {
-  color: #60666E;
+.c5[type='number'] {
+  -moz-appearance: textfield;
 }
 
-.c4:-ms-input-placeholder {
-  color: #60666E;
-}
-
-.c4::placeholder {
-  color: #60666E;
-}
-
-.c4:disabled {
+.c5:disabled {
   background-color: #F1F2F2;
   border-color: #B7BBC2;
   color: #B7BBC2;
 }
 
-.c4:disabled,
-.c4:disabled::-webkit-input-placeholder {
-  color: #B7BBC2;
+.c5:-moz-read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
-.c4:disabled,
-.c4:disabled::-moz-placeholder {
-  color: #B7BBC2;
+.c5:read-only {
+  background-color: rgb(0 0 0 / 0.03);
+  border-color: transparent;
+  color: #1B1C1E;
 }
 
-.c4:disabled,
-.c4:disabled:-ms-input-placeholder {
-  color: #B7BBC2;
-}
-
-.c4:disabled,
-.c4:disabled::placeholder {
-  color: #B7BBC2;
-}
-
-.c4:focus-visible {
+.c5:focus-visible {
   box-shadow: 0 0 0 2px #006296;
   outline: 2px solid #99C0D5;
   outline-offset: -2px;
-}
-
-.c4::-webkit-outer-spin-button,
-.c4::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c4[type='number'] {
-  -moz-appearance: textfield;
 }
 
 <div
@@ -1089,73 +1312,71 @@ input + .c1 {
     test
   </label>
   <div
+    aria-labelledby="uuid1_label"
     class="c3"
+    role="group"
   >
+    <button
+      aria-label="Decrease number"
+      class="c4"
+      data-testid="stepper-button-decrement"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-minus"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </button>
     <input
       aria-invalid="false"
-      class="c4"
+      class="c5"
       data-testid="stepper-input"
       id="uuid1"
-      name="points"
       type="number"
       value=""
     />
-    <div
-      class="c5"
+    <button
+      aria-label="Increase number"
+      class="c6"
+      data-testid="stepper-button-increment"
+      type="button"
     >
-      <button
-        aria-label="Increase number"
-        class="c6"
-        data-testid="stepper-button-increment"
-        tabindex="-1"
-        type="button"
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-plus"
+        fill="none"
+        focusable="false"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-up"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m18 15-6-6-6 6"
-          />
-        </svg>
-      </button>
-      <button
-        aria-label="Decrease number"
-        class="c7"
-        data-testid="stepper-button-decrement"
-        tabindex="-1"
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          class="lucide lucide-chevron-down"
-          fill="none"
-          focusable="false"
-          height="16"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m6 9 6 6 6-6"
-          />
-        </svg>
-      </button>
-    </div>
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="M12 5v14"
+        />
+      </svg>
+    </button>
   </div>
 </div>
 `;

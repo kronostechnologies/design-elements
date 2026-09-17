@@ -51,3 +51,30 @@ export const WithToggletip: Story = {
         },
     },
 };
+
+export const WithThresholds: Story = {
+    args: {
+        defaultValue: 0,
+        hint: 'Minimum: 0, Maximum: 10',
+        max: 10,
+        min: 0,
+    },
+};
+
+export const ReadOnly: Story = {
+    args: {
+        label: 'Read-only stepper input',
+        readOnly: true,
+        value: 4,
+    },
+};
+
+export const Invalid: Story = {
+    args: {
+        hint: 'Error state for design review',
+        label: 'Invalid stepper input',
+        valid: false,
+        validationErrorMessage: 'This value is not valid.',
+        value: 4,
+    },
+};
