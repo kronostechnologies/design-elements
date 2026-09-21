@@ -1,0 +1,70 @@
+import { Card } from '@equisoft/design-elements-react';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
+import * as CardStories  from './card.stories';
+
+# Card
+
+## Table of contents
+1. [Definition](#definition)
+2. [Usage](#usage)
+3. [Variants](#variants)
+4. [Properties](#properties)
+
+<Meta of={CardStories} />
+
+## Definition/Overview
+Cards allow users to be introduced to a single subject or concept and prompts them to take action, such as clicking for
+more details.
+<Canvas of={CardStories.NonClickable} />
+
+## Usage
+
+### When to use
+- **One card, one concept**. A card can contain multiple elements, but each card should focus on only one bit of
+  information or content. This allows users to browse one card at a time [4].
+- Use it to gather heterogeneous information about a single theme to form a more homogeneous page. Cards are an
+  excellent choice for displaying a variety of content types at the same time on the same page [3].
+- Use when there is a call-to-action related to the card. A card should not only be a structure element, it should
+  always lead to some action. A CTA can be in the form of text, an image, a button, or a link. The goal of a CTA is
+  to prompt the user to take action.
+- Use to visually group digestible portions of information that call for action; like activating an integration, or
+  accessing more details rather than the full details themselves. It can be a summary that gives users a hint of what
+  they can find on another page, encouraging them to click for more information [1].
+- Use when users browse for information. When you design a layout with cards, the key idea is to allow users to
+  quickly digest large portions of content and dive deep into their interests [8].
+
+### When not to use
+- Do not use cards when your content requires direct comparison. Each card should be independent and should not
+  require to be compared with each other.
+- Do not use cards to display a search result.
+- Do not use cards when the content of the page you want to present is already grouped into very homogenous items
+  such as:
+    - A list of similar items. While cards can be used for homogenous content, in many cases it’s better to use
+      quickly scannable list (or grid) instead of cards for that (simply because the UI will be less complex) [9].
+    - Gallery of images. The use of cards can distract the user and prevent easy scannability. A standard grid view
+      can be more relevant when it allows the human eye to scan the grid and its items more easily [7].
+- Do not use cards when you need to present the information in a strict order. Card layouts deemphasize the ranking
+  of content as they don’t provide obvious information about the order in which content should be viewed on a page [7].
+  For example, a form or a page with different sections should not use cards, as the order in which information is
+  presented is important.
+
+## Variants
+### Non-clickable
+<Canvas of={CardStories.NonClickable} />
+
+### Clickable
+Coming soon!
+
+## Properties
+<ArgTypes of={Card} />
+
+## References
+1. [https://www.nngroup.com/articles/cards-component/#:~:text=Summary%3A A “card” is,visually resembling a playing card](https://www.nngroup.com/articles/cards-component/#:~:text=Summary%3A%20A%20%E2%80%9Ccard%E2%80%9D%20is,visually%20resembling%20a%20playing%20card)
+2. [https://uxmovement.medium.com/a-guide-to-designing-better-filter-ui-components-8091ff975115](https://uxmovement.medium.com/a-guide-to-designing-better-filter-ui-components-8091ff975115)
+3. [https://www.nngroup.com/articles/cards-component/#:~:text=Summary%3A A “card” is,visually resembling a playing card](https://www.nngroup.com/articles/cards-component/#:~:text=Summary%3A%20A%20%E2%80%9Ccard%E2%80%9D%20is,visually%20resembling%20a%20playing%20card)
+4. [https://uxplanet.org/best-practices-for-cards-fa45e3ad94dd](https://uxplanet.org/best-practices-for-cards-fa45e3ad94dd)
+5. [https://m3.material.io/components/cards/guidelines](https://m3.material.io/components/cards/guidelines)
+6. [https://uxplanet.org/ultimate-guide-for-designing-ui-cards-59488a91b44f#:~:text=When%20to%20use%20card%20UI,presenting%20such%20kind%20of%20content](https://uxplanet.org/ultimate-guide-for-designing-ui-cards-59488a91b44f#:~:text=When%20to%20use%20card%20UI,presenting%20such%20kind%20of%20content)
+7. [https://ui-patterns.com/patterns/cards](https://ui-patterns.com/patterns/cards)
+8. [https://uxplanet.org/simple-design-tips-for-crafting-better-ui-cards-19c1ac31a44e](https://uxplanet.org/simple-design-tips-for-crafting-better-ui-cards-19c1ac31a44e)
+9. [https://uxplanet.org/using-card-based-design-to-enhance-ux-51f965ab70cb](https://uxplanet.org/using-card-based-design-to-enhance-ux-51f965ab70cb)
