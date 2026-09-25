@@ -1,11 +1,11 @@
 import { css } from 'styled-components';
 
 export const stepperSegmentSurfaceStyles = css`
-    background: var(--color-control-background, #fff);
-    border-bottom: 1px solid var(--stepper-segment-border-color, var(--color-control-border, #60666e));
+    background: var(--stepper-segment-background-color);
+    border-bottom: 1px solid var(--stepper-segment-border-color);
     border-left: none;
     border-right: none;
-    border-top: 1px solid var(--stepper-segment-border-color, var(--color-control-border, #60666e));
+    border-top: 1px solid var(--stepper-segment-border-color);
 `;
 
 export const stepperSegmentMiddleCornerStyles = css`
@@ -21,9 +21,9 @@ export const stepperSegmentTrailingCornerStyles = css`
 `;
 
 export const stepperSegmentLeadingEdgeStyles = css`
-    border-left: 1px solid var(--stepper-segment-border-color, var(--color-control-border, #60666e));
+    border-left: 1px solid var(--stepper-segment-border-color);
 `;
 
 export const stepperSegmentTrailingDividerStyles = css`
-    border-right: 1px solid var(--stepper-segment-border-color, var(--color-control-border, #60666e));
+    border-right: 1px solid var(--stepper-segment-border-color);
 `;

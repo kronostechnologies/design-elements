@@ -3,23 +3,28 @@ import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { StepperButton } from './stepper-button';
 
+const TEST_IDS = {
+    DECREMENT: 'stepper-button-decrement',
+    INCREMENT: 'stepper-button-increment',
+} as const;
+
 describe('StepperButton', () => {
-    it('calls onPress when decrement button is mouse down clicked', async () => {
+    it('calls onPress when decrement button is clicked', async () => {
         const callback = jest.fn();
         const user = userEvent.setup();
         renderWithProviders(<StepperButton type="decrement" onPress={callback} />);
 
-        await user.pointer({ keys: '[MouseLeft>]', target: screen.getByTestId('stepper-button-decrement') });
+        await user.click(screen.getByTestId(TEST_IDS.DECREMENT));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
 
-    it('calls onPress when increment button is mouse down clicked', async () => {
+    it('calls onPress when increment button is clicked', async () => {
         const callback = jest.fn();
         const user = userEvent.setup();
         renderWithProviders(<StepperButton type="increment" onPress={callback} />);
 
-        await user.pointer({ keys: '[MouseLeft>]', target: screen.getByTestId('stepper-button-increment') });
+        await user.click(screen.getByTestId(TEST_IDS.INCREMENT));
 
         expect(callback).toHaveBeenCalledTimes(1);
     });
@@ -29,7 +34,7 @@ describe('StepperButton', () => {
         const user = userEvent.setup();
         renderWithProviders(<StepperButton type="increment" onPress={callback} />);
 
-        const button = screen.getByTestId('stepper-button-increment');
+        const button = screen.getByTestId(TEST_IDS.INCREMENT);
         button.focus();
         await user.keyboard('{Enter}');
 
@@ -40,7 +45,7 @@ describe('StepperButton', () => {
         const callback = jest.fn();
         const user = userEvent.setup();
         renderWithProviders(<StepperButton type="increment" onStop={callback} />);
-        const button = screen.getByTestId('stepper-button-increment');
+        const button = screen.getByTestId(TEST_IDS.INCREMENT);
 
         await user.pointer({ keys: '[MouseLeft>]', target: button });
         await user.pointer({ keys: '[/MouseLeft]', target: button });
@@ -52,7 +57,7 @@ describe('StepperButton', () => {
         const callback = jest.fn();
         const user = userEvent.setup();
         renderWithProviders(<StepperButton type="decrement" onStop={callback} />);
-        const button = screen.getByTestId('stepper-button-decrement');
+        const button = screen.getByTestId(TEST_IDS.DECREMENT);
 
         await user.hover(button);
         await user.unhover(button);

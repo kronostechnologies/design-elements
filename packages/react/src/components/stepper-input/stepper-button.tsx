@@ -1,6 +1,7 @@
 import { type FC, type KeyboardEvent, type MouseEvent } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, type FlattenInterpolation, type ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
 import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon';
@@ -16,12 +17,13 @@ export type StepperButtonType = 'decrement' | 'increment';
 
 export type StepperButtonFrameEdge = 'leading' | 'trailing';
 
-interface StyledButtonProps {
+interface StyledStepperButtonProps {
     $frameEdge?: StepperButtonFrameEdge;
     $isMobile: boolean;
+    $type: StepperButtonType;
 }
 
-const buttonStyles = css<StyledButtonProps>`
+const buttonStyles = css<StyledStepperButtonProps>`
     align-items: center;
     box-sizing: border-box;
     color: ${({ theme }) => theme.component['stepper-button-text-color']};
@@ -55,7 +57,7 @@ const buttonStyles = css<StyledButtonProps>`
     }
 `;
 
-const frameEdgeStyles = css<StyledButtonProps>`
+const frameEdgeStyles = css<StyledStepperButtonProps>`
     ${({ $frameEdge }) => $frameEdge && css`
         ${stepperSegmentSurfaceStyles};
         position: relative;
@@ -80,31 +82,53 @@ const frameEdgeStyles = css<StyledButtonProps>`
     }
 `;
 
-const DecrementButton = styled.button<StyledButtonProps>`
-    ${buttonStyles};
-    ${({ $frameEdge }) => !$frameEdge && css`
-        ${stepperSegmentSurfaceStyles};
-        ${stepperSegmentLeadingEdgeStyles};
-        ${stepperSegmentTrailingDividerStyles};
-        ${stepperSegmentLeadingCornerStyles};
-    `};
-    ${frameEdgeStyles};
+function getDefaultSegmentStyles(type: StepperButtonType): FlattenInterpolation<ThemeProps<ResolvedTheme>> {
+    if (type === 'decrement') {
+        return css`
+            ${stepperSegmentSurfaceStyles};
+            ${stepperSegmentLeadingEdgeStyles};
+            ${stepperSegmentTrailingDividerStyles};
+            ${stepperSegmentLeadingCornerStyles};
+            z-index: 1;
+        `;
+    }
 
-    ${({ $frameEdge }) => !$frameEdge && css`
-        z-index: 1;
-    `};
-`;
-
-const IncrementButton = styled.button<StyledButtonProps>`
-    ${buttonStyles};
-    ${({ $frameEdge }) => !$frameEdge && css`
+    return css`
         ${stepperSegmentSurfaceStyles};
         ${stepperSegmentTrailingDividerStyles};
         ${stepperSegmentTrailingCornerStyles};
         z-index: 1;
-    `};
+    `;
+}
+
+const segmentLayoutStyles = css<StyledStepperButtonProps>`
+    ${({ $type, $frameEdge }) => !$frameEdge && getDefaultSegmentStyles($type)};
     ${frameEdgeStyles};
 `;
+
+const StyledStepperButton = styled.button<StyledStepperButtonProps>`
+    ${buttonStyles};
+    ${segmentLayoutStyles};
+`;
+
+type StepperButtonMeta = {
+    iconName: 'minus' | 'plus';
+    testId: string;
+    translationKey: 'decrement-button-aria-label' | 'increment-button-aria-label';
+};
+
+const STEPPER_BUTTON_META: Record<StepperButtonType, StepperButtonMeta> = {
+    decrement: {
+        iconName: 'minus',
+        testId: 'stepper-button-decrement',
+        translationKey: 'decrement-button-aria-label',
+    },
+    increment: {
+        iconName: 'plus',
+        testId: 'stepper-button-increment',
+        translationKey: 'increment-button-aria-label',
+    },
+};
 
 export interface StepperButtonProps {
     disabled?: boolean;
@@ -123,13 +147,7 @@ export const StepperButton: FC<StepperButtonProps> = ({
 }) => {
     const { t } = useTranslation('stepper-buttons');
     const { isMobile } = useDeviceContext();
-
-    const ButtonComponent = type === 'decrement' ? DecrementButton : IncrementButton;
-    const ariaLabel = type === 'decrement'
-        ? t('decrement-button-aria-label')
-        : t('increment-button-aria-label');
-    const testId = type === 'decrement' ? 'stepper-button-decrement' : 'stepper-button-increment';
-    const iconName = type === 'decrement' ? 'minus' : 'plus';
+    const { iconName, testId, translationKey } = STEPPER_BUTTON_META[type];
 
     const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>): void => {
         if (event.key === 'Enter' || event.key === ' ') {
@@ -139,10 +157,11 @@ export const StepperButton: FC<StepperButtonProps> = ({
     };
 
     return (
-        <ButtonComponent
+        <StyledStepperButton
             $frameEdge={frameEdge}
             $isMobile={isMobile}
-            aria-label={ariaLabel}
+            $type={type}
+            aria-label={t(translationKey)}
             data-testid={testId}
             disabled={disabled}
             type="button"
@@ -152,7 +171,7 @@ export const StepperButton: FC<StepperButtonProps> = ({
             onMouseUp={onStop}
         >
             <Icon name={iconName} size={isMobile ? '20' : '16'} />
-        </ButtonComponent>
+        </StyledStepperButton>
     );
 };
 

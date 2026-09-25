@@ -145,10 +145,6 @@ function getStyledInputBorder(inErrorSegment?: boolean, readOnly?: boolean): str
     return undefined;
 }
 
-function getErrorBorderColor(theme: ResolvedTheme): string {
-    return `var(--color-control-border-error, ${theme.component['text-input-error-border-color']})`;
-}
-
 interface StepperGroupProps {
     theme: ResolvedTheme;
     $disabled?: boolean;
@@ -173,6 +169,7 @@ const StepperFieldContainer = styled(FieldContainer)<{ $isMobile: boolean }>`
 `;
 
 const Wrapper = styled.div<StepperGroupProps & { device: DeviceContextProps }>`
+    --stepper-segment-background-color: ${({ theme }) => theme.component['stepper-button-background-color']};
     --stepper-segment-border-color: ${({ theme, $disabled }) => getStepperBorderColor(theme, { $disabled })};
     display: inline-flex;
     isolation: isolate;
@@ -196,8 +193,8 @@ const Wrapper = styled.div<StepperGroupProps & { device: DeviceContextProps }>`
  * button by 1px and stack above it so the right error edge stays visible.
  */
 const ErrorValueSegment = styled.div<{ device: DeviceContextProps }>`
-    background: var(--color-control-background, #fff);
-    border: 1px solid ${({ theme }) => getErrorBorderColor(theme)};
+    background: ${({ theme }) => theme.component['stepper-button-background-color']};
+    border: 1px solid ${({ theme }) => theme.component['text-input-error-border-color']};
     border-radius: var(--border-radius-none, 0);
     box-sizing: border-box;
     display: flex;
@@ -211,7 +208,7 @@ const ErrorValueSegment = styled.div<{ device: DeviceContextProps }>`
     z-index: 2;
 
     &::after {
-        background: ${({ theme }) => getErrorBorderColor(theme)};
+        background: ${({ theme }) => theme.component['text-input-error-border-color']};
         content: '';
         height: 100%;
         pointer-events: none;
