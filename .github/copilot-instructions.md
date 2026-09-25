@@ -1,14 +1,7 @@
 This project uses yarn as package manager.
-Do no use `npm` or `npx` commands.
-
-### Tests
-This project uses Jest.
-Group blocks within a test closure into given-when-then structure, separated with an empty line (without comments).
-For React component tests, use `@testing-library/react` (RTL).
-    - Use method `renderWithProviders` instead of `render`. 
-    - Use `it` for test closures.
-    - Use `screen` for queries.
-    - Use `userEvent` for user interactions.
-
-For React hooks tests, use hook testing from `@testing-library/react` (RTL).
+Do not use `npm` or `npx` commands.
 Do not write useless comments.
+
+Additional path-scoped instructions apply automatically based on the files being changed:
+- `.github/instructions/tests.instructions.md`: Jest/RTL test conventions.
+- `.github/instructions/breaking-changes.instructions.md`: breaking-change checklist for the `react` package's public API.
