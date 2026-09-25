@@ -319,6 +319,7 @@ export interface StepperInputProps extends PartialStepperInputProps {
     label?: string;
     max?: number;
     min?: number;
+    name?: string;
     noMargin?: boolean;
     readOnly?: boolean;
     tooltip?: TooltipProps;
@@ -345,6 +346,47 @@ function isAtMax(value: Value, max: number | undefined): boolean {
     return max !== undefined && value !== null && value !== undefined && value >= max;
 }
 
+function getNumericStep(step: InputHTMLAttributes<HTMLInputElement>['step']): number {
+    if (step === undefined || step === 'any') {
+        return 1;
+    }
+
+    const parsed = typeof step === 'number' ? step : Number(step);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+}
+
+function getValueAfterStep(
+    current: Value,
+    direction: 'up' | 'down',
+    min: number | undefined,
+    max: number | undefined,
+    step: InputHTMLAttributes<HTMLInputElement>['step'],
+): Value {
+    const delta = getNumericStep(step);
+    let base: number;
+
+    if (current === null || current === undefined || Number.isNaN(Number(current))) {
+        base = min ?? 0;
+    } else {
+        base = current;
+    }
+
+    let next = direction === 'up' ? base + delta : base - delta;
+
+    if (min !== undefined) {
+        next = Math.max(next, min);
+    }
+    if (max !== undefined) {
+        next = Math.min(next, max);
+    }
+
+    if (current !== null && current !== undefined && next === current) {
+        return current;
+    }
+
+    return next;
+}
+
 export const StepperInput: FC<StepperInputProps> = ({
     defaultValue,
     disabled,
@@ -353,6 +395,7 @@ export const StepperInput: FC<StepperInputProps> = ({
     label,
     max,
     min,
+    name,
     noMargin,
     readOnly,
     step,
@@ -373,24 +416,48 @@ export const StepperInput: FC<StepperInputProps> = ({
     const fieldId = useId(providedId);
     const intervalId = useRef<NodeJS.Timeout>();
     const timeoutId = useRef<NodeJS.Timeout>();
+    const currentValueRef = useRef<Value>(defaultValue ?? null);
     const [validity, setValidity] = useState(valid ?? true);
     const [internalValue, setInternalValue] = useState<Value>(defaultValue ?? null);
 
     const currentValue = value !== undefined ? value : internalValue;
+    currentValueRef.current = currentValue;
     const showButtons = !readOnly;
     const isDecrementDisabled = disabled || isAtMin(currentValue, min);
     const isIncrementDisabled = disabled || isAtMax(currentValue, max);
 
-    const stepValue = useCallback((direction: 'up' | 'down'): void => {
+    const applySingleStep = useCallback((direction: 'up' | 'down'): void => {
+        const steppingControlledValue = value !== undefined;
+        const valueForStep = steppingControlledValue
+            ? currentValueRef.current
+            : (inputRef.current?.value === '' ? null : Number(inputRef.current?.value));
+
+        if (direction === 'up' && isAtMax(valueForStep, max)) {
+            return;
+        }
+        if (direction === 'down' && isAtMin(valueForStep, min)) {
+            return;
+        }
+
+        if (steppingControlledValue) {
+            const nextValue = getValueAfterStep(valueForStep, direction, min, max, step);
+            if (nextValue !== valueForStep) {
+                onChange?.(nextValue);
+            }
+            return;
+        }
+
+        const valueBefore = Number(inputRef.current?.value);
         if (direction === 'up') {
             inputRef.current?.stepUp();
         } else {
             inputRef.current?.stepDown();
         }
-        if (value === undefined) {
+        const valueAfter = Number(inputRef.current?.value);
+        if (valueBefore !== valueAfter) {
             triggerChangeEventOnRef(inputRef);
         }
-    }, [value]);
+    }, [max, min, onChange, step, value]);
 
     const handleStep = useCallback((
         direction: 'up' | 'down',
@@ -400,25 +467,14 @@ export const StepperInput: FC<StepperInputProps> = ({
         if (direction === 'up' && isIncrementDisabled) return;
         if (direction === 'down' && isDecrementDisabled) return;
 
-        const valueBefore = Number(inputRef.current?.value);
-        stepValue(direction);
+        applySingleStep(direction);
 
         if ('type' in event && event.type === 'mousedown') {
             timeoutId.current = setTimeout(() => {
-                intervalId.current = setInterval(() => stepValue(direction), 50);
+                intervalId.current = setInterval(() => applySingleStep(direction), 50);
             }, 500);
         }
-
-        const valueAfter = Number(inputRef.current?.value);
-        if (valueBefore !== valueAfter) {
-            const nextValue = inputRef.current?.value === '' ? null : Number(inputRef.current?.value);
-            if (value === undefined) {
-                setInternalValue(nextValue);
-            } else {
-                onChange?.(nextValue);
-            }
-        }
-    }, [isDecrementDisabled, isIncrementDisabled, onChange, stepValue, value]);
+    }, [applySingleStep, isDecrementDisabled, isIncrementDisabled]);
 
     const handleIncrement = useCallback((
         event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
@@ -477,12 +533,6 @@ export const StepperInput: FC<StepperInputProps> = ({
         }
     }, [valid]);
 
-    const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>): void => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-        }
-    }, []);
-
     useEffect(() => {
         if (valid !== undefined) {
             setValidity(valid);
@@ -505,6 +555,7 @@ export const StepperInput: FC<StepperInputProps> = ({
             id={fieldId}
             max={max}
             min={min}
+            name={name}
             readOnly={readOnly}
             ref={inputRef}
             required={required}
@@ -515,7 +566,6 @@ export const StepperInput: FC<StepperInputProps> = ({
             onChange={handleChange}
             onFocus={onFocus}
             onInvalid={handleOnInvalid}
-            onKeyDown={handleKeyDown}
         />
     );
 

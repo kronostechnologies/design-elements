@@ -1,6 +1,6 @@
 import { StepperInput, type StepperInputProps } from '@equisoft/design-elements-react';
 import { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { rawCodeParameters } from './utils/parameters';
 
 const FIGMA_LABEL = 'Label';
@@ -13,6 +13,12 @@ const FIGMA_MAX = 10;
 const StepperInputStory = (args: StepperInputProps): JSX.Element => {
     const isControlled = args.value !== undefined;
     const [value, setValue] = useState(args.value ?? args.defaultValue ?? FIGMA_DEFAULT_VALUE);
+
+    useEffect(() => {
+        if (isControlled && args.value !== undefined) {
+            setValue(args.value);
+        }
+    }, [args.value, isControlled]);
 
     if (!isControlled) {
         return (
