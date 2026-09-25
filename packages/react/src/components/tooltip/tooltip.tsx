@@ -200,10 +200,16 @@ export interface TooltipProps {
     /** Adds delay to tooltip */
     delayed?: boolean;
     disabled?: boolean;
+    disableFocusOpen?: boolean;
     invertedIcon?: boolean;
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
+    /**
+     * Positioning strategy
+     * @default 'absolute'
+     */
+    strategy?: 'absolute' | 'fixed';
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -223,10 +229,12 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     delayed,
     desktopPlacement = 'right',
     disabled,
+    disableFocusOpen = false,
     invertedIcon = false,
     label,
     mode = 'normal',
     confirmationLabel,
+    strategy = 'absolute',
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -257,7 +265,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
-    }, { modifiers });
+    }, { modifiers, strategy });
 
     if (prevLabel.current !== currentLabel) {
         prevLabel.current = currentLabel;
@@ -318,10 +326,10 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [setIsClicked]);
 
     const handleFocus = useCallback((): void => {
-        if (!isMobile) {
+        if (!isMobile && !disableFocusOpen) {
             openTooltip();
         }
-    }, [isMobile, openTooltip]);
+    }, [disableFocusOpen, isMobile, openTooltip]);
 
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {

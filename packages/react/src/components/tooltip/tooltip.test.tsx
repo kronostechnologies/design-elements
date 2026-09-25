@@ -114,6 +114,18 @@ describe('Tooltip', () => {
 
             expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
+
+        it('does not open on focus given focus opening is disabled', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
+                <Tooltip label="Test Content" disableFocusOpen />,
+                'desktop',
+            );
+
+            await user.tab();
+
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+        });
     });
 
     it('has default desktop styles', () => {
@@ -174,5 +186,17 @@ describe('Tooltip', () => {
         );
 
         expect(screen.getByTestId('icon-children')).toBeInTheDocument();
+    });
+
+    it('opens on mouseEnter given strategy is fixed', async () => {
+        renderWithProviders(
+            <Tooltip label="Test Content" strategy="fixed" />,
+            'desktop',
+        );
+
+        await userEvent.hover(screen.getByTestId('tooltip'));
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+        expect(screen.getByTestId('tooltip-content-container')).toHaveStyle({ position: 'fixed' });
     });
 });
