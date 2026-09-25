@@ -428,9 +428,14 @@ export const StepperInput: FC<StepperInputProps> = ({
 
     const applySingleStep = useCallback((direction: 'up' | 'down'): void => {
         const steppingControlledValue = value !== undefined;
-        const valueForStep = steppingControlledValue
-            ? currentValueRef.current
-            : (inputRef.current?.value === '' ? null : Number(inputRef.current?.value));
+        let valueForStep: Value;
+        if (steppingControlledValue) {
+            valueForStep = currentValueRef.current;
+        } else if (inputRef.current?.value === '') {
+            valueForStep = null;
+        } else {
+            valueForStep = Number(inputRef.current?.value);
+        }
 
         if (direction === 'up' && isAtMax(valueForStep, max)) {
             return;

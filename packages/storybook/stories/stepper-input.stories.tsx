@@ -12,7 +12,9 @@ const FIGMA_MAX = 10;
 
 const StepperInputStory = (args: StepperInputProps): JSX.Element => {
     const isControlled = args.value !== undefined;
-    const [value, setValue] = useState(args.value ?? args.defaultValue ?? FIGMA_DEFAULT_VALUE);
+    const [value, setValue] = useState<number | null>(
+        args.value !== undefined ? args.value : (args.defaultValue ?? FIGMA_DEFAULT_VALUE),
+    );
 
     useEffect(() => {
         if (isControlled && args.value !== undefined) {
