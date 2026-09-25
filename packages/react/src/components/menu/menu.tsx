@@ -132,7 +132,6 @@ const Label = styled.span`
 `;
 
 const MenuItemTooltip = styled(Tooltip)`
-    display: block;
     width: 100%;
 `;
 
@@ -403,6 +402,7 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
+                                disableFocusOpen
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

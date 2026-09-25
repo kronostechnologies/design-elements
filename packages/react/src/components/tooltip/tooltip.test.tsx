@@ -114,6 +114,18 @@ describe('Tooltip', () => {
 
             expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
+
+        it('does not open on focus given focus opening is disabled', async () => {
+            const user = userEvent.setup();
+            renderWithProviders(
+                <Tooltip label="Test Content" disableFocusOpen />,
+                'desktop',
+            );
+
+            await user.tab();
+
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+        });
     });
 
     it('has default desktop styles', () => {

@@ -200,12 +200,13 @@ export interface TooltipProps {
     /** Adds delay to tooltip */
     delayed?: boolean;
     disabled?: boolean;
+    disableFocusOpen?: boolean;
     invertedIcon?: boolean;
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
     /**
-     * Popper positioning strategy
+     * Positioning strategy
      * @default 'absolute'
      */
     strategy?: 'absolute' | 'fixed';
@@ -228,6 +229,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     delayed,
     desktopPlacement = 'right',
     disabled,
+    disableFocusOpen = false,
     invertedIcon = false,
     label,
     mode = 'normal',
@@ -324,10 +326,10 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [setIsClicked]);
 
     const handleFocus = useCallback((): void => {
-        if (!isMobile) {
+        if (!isMobile && !disableFocusOpen) {
             openTooltip();
         }
-    }, [isMobile, openTooltip]);
+    }, [disableFocusOpen, isMobile, openTooltip]);
 
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {

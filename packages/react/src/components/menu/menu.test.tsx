@@ -285,4 +285,18 @@ describe('Menu', () => {
         expect(screen.getByRole('tooltip')).toBeInTheDocument();
         expect(screen.getByRole('tooltip')).toHaveTextContent('This is a tooltip');
     });
+
+    it('should not show tooltip when the menu opens and focuses the first option', () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                tooltip: { label: 'This is a tooltip' },
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        expect(screen.getByRole('tooltip')).not.toHaveAttribute('aria-hidden', 'false');
+    });
 });
