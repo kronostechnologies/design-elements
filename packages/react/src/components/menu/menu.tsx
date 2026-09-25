@@ -238,6 +238,7 @@ export const Menu = forwardRef(({
     const [focusedIndex, setFocusedIndex] = useState(0);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
+    const [enableTooltipFocusOpen, setEnableTooltipFocusOpen] = useState(false);
     const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
 
     const { scrollIntoView } = useScrollIntoView({
@@ -291,6 +292,7 @@ export const Menu = forwardRef(({
 
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         setMouseNavigating(false);
+        setEnableTooltipFocusOpen(true);
         onKeyDown?.(event);
         const activeMenuOptions = getAllOptionsInLevel(activeMenuList);
 
@@ -402,7 +404,7 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
-                                disableFocusOpen
+                                disableFocusOpen={!enableTooltipFocusOpen}
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

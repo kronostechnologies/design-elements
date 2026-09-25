@@ -197,5 +197,6 @@ describe('Tooltip', () => {
         await userEvent.hover(screen.getByTestId('tooltip'));
 
         expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+        expect(screen.getByTestId('tooltip-content-container')).toHaveStyle({ position: 'fixed' });
     });
 });

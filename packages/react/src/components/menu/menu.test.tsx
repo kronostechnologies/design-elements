@@ -297,6 +297,26 @@ describe('Menu', () => {
 
         renderWithProviders(<Menu options={optionsWithTooltip} />);
 
-        expect(screen.getByRole('tooltip')).not.toHaveAttribute('aria-hidden', 'false');
+        expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+    });
+
+    it('should show tooltip when an option with a tooltip receives keyboard focus after navigation', async () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                onClick: jest.fn(),
+            },
+            {
+                label: 'Peach',
+                tooltip: { label: 'This is a tooltip' },
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        await userEvent.keyboard('{ArrowDown}');
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
     });
 });
