@@ -38,7 +38,7 @@
     "@mui/base": "5.0.0-beta.70",
     "@tanstack/react-table": "8.21.3",
     "date-fns": "4.4.0",
-    "lucide-react": "1.45.0",
+    "lucide-react": "1.47.0",
     "prop-types": "15.8.1",
     "react-datepicker": "9.1.0",
     "react-is": "18.3.1",
@@ -85,10 +85,10 @@
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
-    "expect": "30.5.1",
+    "expect": "30.5.2",
     "i18next": "26.4.2",
-    "jest": "30.5.1",
-    "jest-environment-jsdom": "30.5.1",
+    "jest": "30.5.2",
+    "jest-environment-jsdom": "30.5.2",
     "jest-extended": "7.0.0",
     "jest-junit": "17.0.0",
     "jest-styled-components": "7.4.0",
@@ -105,9 +105,9 @@
     "ts-loader": "9.6.2",
     "ts-mockito": "2.6.1",
     "typescript": "6.0.3",
-    "webpack": "5.111.0",
+    "webpack": "5.111.1",
     "webpack-cli": "7.2.3",
     "webpack-merge": "6.0.1",
-    "yargs": "18.1.0"
+    "yargs": "18.2.0"
   }
 }
