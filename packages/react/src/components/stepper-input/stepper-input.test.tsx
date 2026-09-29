@@ -6,6 +6,11 @@ import { StepperInput } from './stepper-input';
 const VALIDATION_ERROR_MESSAGE = 'This field is required';
 const INVALID_FIELD_TEST_ID = 'invalid-field';
 
+const STEPPER_BUTTONS = {
+    INCREMENT: 'stepper-button-increment',
+    DECREMENT: 'stepper-button-decrement',
+} as const;
+
 describe('Stepper input', () => {
     it('should not show validation message when input is empty and required onBlur', async () => {
         renderWithProviders(
@@ -145,5 +150,29 @@ describe('Stepper input', () => {
         );
 
         expect(screen.getByTestId(INVALID_FIELD_TEST_ID)).toHaveTextContent(VALIDATION_ERROR_MESSAGE);
+    });
+
+    describe('controlled stepping', () => {
+        it('steps on the decimal step grid without floating-point artifacts', async () => {
+            const onChange = jest.fn();
+            renderWithProviders(
+                <StepperInput onChange={onChange} step={0.1} value={0.2} />,
+            );
+
+            await userEvent.click(screen.getByTestId(STEPPER_BUTTONS.INCREMENT));
+
+            expect(onChange).toHaveBeenCalledWith(0.3);
+        });
+
+        it('snaps a step-mismatched value to the next valid step on increment', async () => {
+            const onChange = jest.fn();
+            renderWithProviders(
+                <StepperInput min={0} onChange={onChange} step={2} value={1} />,
+            );
+
+            await userEvent.click(screen.getByTestId(STEPPER_BUTTONS.INCREMENT));
+
+            expect(onChange).toHaveBeenCalledWith(2);
+        });
     });
 });

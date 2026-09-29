@@ -346,47 +346,6 @@ function isAtMax(value: Value, max: number | undefined): boolean {
     return max !== undefined && value !== null && value !== undefined && value >= max;
 }
 
-function getNumericStep(step: InputHTMLAttributes<HTMLInputElement>['step']): number {
-    if (step === undefined || step === 'any') {
-        return 1;
-    }
-
-    const parsed = typeof step === 'number' ? step : Number(step);
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
-}
-
-function getValueAfterStep(
-    current: Value,
-    direction: 'up' | 'down',
-    min: number | undefined,
-    max: number | undefined,
-    step: InputHTMLAttributes<HTMLInputElement>['step'],
-): Value {
-    const delta = getNumericStep(step);
-    let base: number;
-
-    if (current === null || current === undefined || Number.isNaN(Number(current))) {
-        base = min ?? 0;
-    } else {
-        base = current;
-    }
-
-    let next = direction === 'up' ? base + delta : base - delta;
-
-    if (min !== undefined) {
-        next = Math.max(next, min);
-    }
-    if (max !== undefined) {
-        next = Math.min(next, max);
-    }
-
-    if (current !== null && current !== undefined && next === current) {
-        return current;
-    }
-
-    return next;
-}
-
 export const StepperInput: FC<StepperInputProps> = ({
     defaultValue,
     disabled,
@@ -427,14 +386,19 @@ export const StepperInput: FC<StepperInputProps> = ({
     const isIncrementDisabled = disabled || isAtMax(currentValue, max);
 
     const applySingleStep = useCallback((direction: 'up' | 'down'): void => {
+        const input = inputRef.current;
+        if (!input) {
+            return;
+        }
+
         const steppingControlledValue = value !== undefined;
         let valueForStep: Value;
         if (steppingControlledValue) {
             valueForStep = currentValueRef.current;
-        } else if (inputRef.current?.value === '') {
+        } else if (input.value === '') {
             valueForStep = null;
         } else {
-            valueForStep = Number(inputRef.current?.value);
+            valueForStep = Number(input.value);
         }
 
         if (direction === 'up' && isAtMax(valueForStep, max)) {
@@ -444,25 +408,45 @@ export const StepperInput: FC<StepperInputProps> = ({
             return;
         }
 
+        const valueBefore = steppingControlledValue
+            ? valueForStep
+            : Number(input.value);
+
+        let previousInputValue: string | undefined;
         if (steppingControlledValue) {
-            const nextValue = getValueAfterStep(valueForStep, direction, min, max, step);
-            if (nextValue !== valueForStep) {
-                onChange?.(nextValue);
+            previousInputValue = input.value;
+            if (valueForStep === null || valueForStep === undefined || Number.isNaN(Number(valueForStep))) {
+                input.value = '';
+            } else {
+                input.value = String(valueForStep);
+            }
+        }
+
+        if (direction === 'up') {
+            input.stepUp();
+        } else {
+            input.stepDown();
+        }
+
+        if (steppingControlledValue) {
+            const steppedValue = input.value === '' ? null : input.valueAsNumber;
+            input.value = previousInputValue ?? '';
+
+            if (
+                steppedValue !== null
+                && !Number.isNaN(steppedValue)
+                && steppedValue !== valueForStep
+            ) {
+                onChange?.(steppedValue);
             }
             return;
         }
 
-        const valueBefore = Number(inputRef.current?.value);
-        if (direction === 'up') {
-            inputRef.current?.stepUp();
-        } else {
-            inputRef.current?.stepDown();
-        }
-        const valueAfter = Number(inputRef.current?.value);
+        const valueAfter = Number(input.value);
         if (valueBefore !== valueAfter) {
             triggerChangeEventOnRef(inputRef);
         }
-    }, [max, min, onChange, step, value]);
+    }, [max, min, onChange, value]);
 
     const handleStep = useCallback((
         direction: 'up' | 'down',
