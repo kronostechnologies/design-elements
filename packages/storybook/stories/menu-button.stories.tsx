@@ -23,18 +23,18 @@ const options: MenuOption[] = [
 const optionsWithTooltips: MenuOption[] = [
     {
         label: 'Option 1',
-        tooltip: { label: 'Additional info about option 1' },
+        disabled: true,
+        tooltip: { label: 'This option is currently unavailable' },
         onClick: () => console.info('Option 1 clicked'),
     },
     {
         label: 'Option 2',
-        tooltip: { label: 'Additional info about option 2' },
+        disabled: true,
+        tooltip: { label: 'This option requires additional setup' },
         onClick: () => console.info('Option 2 clicked'),
     },
     {
         label: 'Option 3',
-        disabled: true,
-        tooltip: { label: 'This option is currently unavailable' },
         onClick: () => console.info('Option 3 clicked'),
     },
 ];

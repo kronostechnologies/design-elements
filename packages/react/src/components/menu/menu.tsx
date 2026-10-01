@@ -19,6 +19,7 @@ import { getNextElement, getPreviousElement } from '../../utils/array';
 import { addFocusVisibleActive, focus, removeFocusVisibleActive } from '../../utils/css-state';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { isLetterOrNumber } from '../../utils/regex';
+import type { MutuallyExclusive } from '../../utils/types';
 import { v4 as uuid } from '../../utils/uuid';
 import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, type IconName } from '../icon';
@@ -135,14 +136,23 @@ const MenuItemTooltip = styled(Tooltip)`
     width: 100%;
 `;
 
-export interface MenuOption {
+interface MenuOptionBase {
     label: string;
     iconName?: IconName;
     options?: MenuItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
-    disabled?: boolean;
-    tooltip?: TooltipProps;
     onClick?(): void;
 }
+
+interface MenuOptionDisabled {
+    disabled: true;
+    tooltip?: TooltipProps;
+}
+
+interface MenuOptionEnabled {
+    disabled?: false;
+}
+
+export type MenuOption = MenuOptionBase & MutuallyExclusive<MenuOptionDisabled, MenuOptionEnabled>;
 
 export interface MenuGroup {
     groupLabel: string;
@@ -151,11 +161,11 @@ export interface MenuGroup {
 
 export type MenuItem = MenuGroup | MenuOption;
 
-interface ListOption extends MenuOption {
+type ListOption = MenuOption & {
     focusIndex: number,
     options?: ListItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
     ref: RefObject<HTMLButtonElement>,
-}
+};
 
 interface ListGroup extends MenuGroup {
     groupOptions: ListOption[];
@@ -238,7 +248,6 @@ export const Menu = forwardRef(({
     const [focusedIndex, setFocusedIndex] = useState(0);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
-    const [enableTooltipFocusOpen, setEnableTooltipFocusOpen] = useState(false);
     const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
 
     const { scrollIntoView } = useScrollIntoView({
@@ -292,7 +301,6 @@ export const Menu = forwardRef(({
 
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>): void {
         setMouseNavigating(false);
-        setEnableTooltipFocusOpen(true);
         onKeyDown?.(event);
         const activeMenuOptions = getAllOptionsInLevel(activeMenuList);
 
@@ -404,7 +412,7 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
-                                disableFocusOpen={!enableTooltipFocusOpen}
+                                defaultOpen={index === 0}
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

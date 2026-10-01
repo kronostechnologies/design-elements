@@ -269,10 +269,11 @@ describe('Menu', () => {
         expect(asFragment()).toMatchSnapshot();
     });
 
-    it('should show tooltip when hovering an option with a tooltip', async () => {
+    it('should show tooltip when hovering a disabled option with a tooltip', async () => {
         const optionsWithTooltip: MenuOption[] = [
             {
                 label: 'Mango',
+                disabled: true,
                 tooltip: { label: 'This is a tooltip' },
                 onClick: jest.fn(),
             },
@@ -280,16 +281,36 @@ describe('Menu', () => {
 
         renderWithProviders(<Menu options={optionsWithTooltip} />);
 
-        await userEvent.hover(screen.getByTestId('menu-option-0'));
+        await userEvent.hover(screen.getByTestId('tooltip'));
 
         expect(screen.getByRole('tooltip')).toBeInTheDocument();
         expect(screen.getByRole('tooltip')).toHaveTextContent('This is a tooltip');
     });
 
-    it('should not show tooltip when the menu opens and focuses the first option', () => {
+    it('should show tooltip when the menu opens given the first option is disabled with a tooltip', () => {
         const optionsWithTooltip: MenuOption[] = [
             {
                 label: 'Mango',
+                disabled: true,
+                tooltip: { label: 'This is a tooltip' },
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+    });
+
+    it('should not show tooltip when the menu opens given a disabled option with a tooltip is not first', () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                onClick: jest.fn(),
+            },
+            {
+                label: 'Peach',
+                disabled: true,
                 tooltip: { label: 'This is a tooltip' },
                 onClick: jest.fn(),
             },
@@ -298,25 +319,5 @@ describe('Menu', () => {
         renderWithProviders(<Menu options={optionsWithTooltip} />);
 
         expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
-    });
-
-    it('should show tooltip when an option with a tooltip receives keyboard focus after navigation', async () => {
-        const optionsWithTooltip: MenuOption[] = [
-            {
-                label: 'Mango',
-                onClick: jest.fn(),
-            },
-            {
-                label: 'Peach',
-                tooltip: { label: 'This is a tooltip' },
-                onClick: jest.fn(),
-            },
-        ];
-
-        renderWithProviders(<Menu options={optionsWithTooltip} />);
-
-        await userEvent.keyboard('{ArrowDown}');
-
-        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
     });
 });

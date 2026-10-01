@@ -200,7 +200,6 @@ export interface TooltipProps {
     /** Adds delay to tooltip */
     delayed?: boolean;
     disabled?: boolean;
-    disableFocusOpen?: boolean;
     invertedIcon?: boolean;
     /** Tooltip text content */
     label: string;
@@ -229,7 +228,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     delayed,
     desktopPlacement = 'right',
     disabled,
-    disableFocusOpen = false,
     invertedIcon = false,
     label,
     mode = 'normal',
@@ -259,7 +257,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [disabled, isMobile]);
 
     const popperTooltip = usePopperTooltip({
-        defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
         onVisibleChange: setIsVisible,
         trigger: getTooltipTriggerType(),
@@ -279,6 +276,13 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
             setControlledTooltipOpen(true);
         }
     }, [delayed, disabled]);
+
+    useEffect(() => {
+        if (defaultOpen) {
+            openTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const closeTooltip = useCallback((): void => {
         if (delayed && tooltipTimeout) {
@@ -326,10 +330,10 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [setIsClicked]);
 
     const handleFocus = useCallback((): void => {
-        if (!isMobile && !disableFocusOpen) {
+        if (!isMobile) {
             openTooltip();
         }
-    }, [disableFocusOpen, isMobile, openTooltip]);
+    }, [isMobile, openTooltip]);
 
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
