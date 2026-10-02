@@ -33,6 +33,8 @@ export type TextToken =
     | 'line-height-1100'
     | 'line-height-1200'
     | 'letter-spacing-normal'
+    | 'letter-spacing-body-compact'
+    | 'letter-spacing-body-mobile'
     | 'font-transform-none'
     | 'font-transform-uppercase';
 
@@ -69,6 +71,8 @@ export const defaultTextTokens: RefTokenMap<TextToken> = {
     'line-height-1100': '2.75rem',
     'line-height-1200': '3rem',
     'letter-spacing-normal': '0.2px',
+    'letter-spacing-body-compact': '0.015rem',
+    'letter-spacing-body-mobile': '0.02875rem',
     'font-transform-none': 'none',
     'font-transform-uppercase': 'uppercase',
 };
