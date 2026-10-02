@@ -7,6 +7,7 @@ import {
     type InputHTMLAttributes,
     type KeyboardEvent,
     type MouseEvent,
+    type PointerEvent,
     type RefObject,
     useCallback,
     useEffect,
@@ -465,7 +466,7 @@ export const StepperInput: FC<StepperInputProps> = ({
 
     const handleHoldStart = useCallback((
         direction: 'up' | 'down',
-        event: MouseEvent<HTMLButtonElement>,
+        event: PointerEvent<HTMLButtonElement>,
     ): void => {
         if (event.button !== 0) return;
         if (direction === 'up' && isIncrementDisabled) return;
@@ -491,13 +492,13 @@ export const StepperInput: FC<StepperInputProps> = ({
     }, [handleActivate]);
 
     const handleIncrementHoldStart = useCallback((
-        event: MouseEvent<HTMLButtonElement>,
+        event: PointerEvent<HTMLButtonElement>,
     ): void => {
         handleHoldStart('up', event);
     }, [handleHoldStart]);
 
     const handleDecrementHoldStart = useCallback((
-        event: MouseEvent<HTMLButtonElement>,
+        event: PointerEvent<HTMLButtonElement>,
     ): void => {
         handleHoldStart('down', event);
     }, [handleHoldStart]);

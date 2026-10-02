@@ -1,4 +1,4 @@
-import { type FC, type KeyboardEvent, type MouseEvent } from 'react';
+import { type FC, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react';
 import styled, { css, type FlattenInterpolation, type ThemeProps } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
@@ -134,7 +134,7 @@ export interface StepperButtonProps {
     disabled?: boolean;
     frameEdge?: StepperButtonFrameEdge;
     type: StepperButtonType;
-    onHoldStart?(event: MouseEvent<HTMLButtonElement>): void;
+    onHoldStart?(event: PointerEvent<HTMLButtonElement>): void;
     onPress?(event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>): void;
     onStop?(): void;
 }
@@ -169,9 +169,10 @@ export const StepperButton: FC<StepperButtonProps> = ({
             type="button"
             onClick={onPress}
             onKeyDown={handleKeyDown}
-            onMouseDown={onHoldStart}
-            onMouseLeave={onStop}
-            onMouseUp={onStop}
+            onPointerCancel={onStop}
+            onPointerDown={onHoldStart}
+            onPointerLeave={onStop}
+            onPointerUp={onStop}
         >
             <Icon name={iconName} size={isMobile ? '20' : '16'} />
         </StyledStepperButton>
