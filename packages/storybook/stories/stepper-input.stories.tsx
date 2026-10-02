@@ -36,7 +36,10 @@ const StepperInputStory = (args: StepperInputProps): JSX.Element => {
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...args}
             value={value}
-            onChange={(next) => setValue(next ?? 0)}
+            onChange={(next) => {
+                setValue(next ?? 0);
+                args.onChange?.(next);
+            }}
         />
     );
 };

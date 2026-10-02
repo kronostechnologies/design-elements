@@ -34,8 +34,7 @@ describe('StepperButton', () => {
         const user = userEvent.setup();
         renderWithProviders(<StepperButton type="increment" onPress={callback} />);
 
-        const button = screen.getByTestId(TEST_IDS.INCREMENT);
-        button.focus();
+        await user.tab();
         await user.keyboard('{Enter}');
 
         expect(callback).toHaveBeenCalledTimes(1);

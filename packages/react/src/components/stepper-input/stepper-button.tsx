@@ -134,6 +134,7 @@ export interface StepperButtonProps {
     disabled?: boolean;
     frameEdge?: StepperButtonFrameEdge;
     type: StepperButtonType;
+    onHoldStart?(event: MouseEvent<HTMLButtonElement>): void;
     onPress?(event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>): void;
     onStop?(): void;
 }
@@ -142,6 +143,7 @@ export const StepperButton: FC<StepperButtonProps> = ({
     disabled,
     frameEdge,
     type,
+    onHoldStart,
     onPress,
     onStop,
 }) => {
@@ -165,8 +167,9 @@ export const StepperButton: FC<StepperButtonProps> = ({
             data-testid={testId}
             disabled={disabled}
             type="button"
+            onClick={onPress}
             onKeyDown={handleKeyDown}
-            onMouseDown={onPress}
+            onMouseDown={onHoldStart}
             onMouseLeave={onStop}
             onMouseUp={onStop}
         >

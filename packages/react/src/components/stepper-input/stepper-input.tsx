@@ -304,7 +304,7 @@ const StyledInput = styled.input<StyledInputProps>`
     border: ${({ $inErrorSegment, $readOnly }) => getStyledInputBorder($inErrorSegment, $readOnly)};
     flex: ${({ $readOnly, $inErrorSegment }) => getStyledInputFlex($readOnly, $inErrorSegment)};
 
-    ${({ $readOnly, theme }) => !$readOnly && focus({ theme })};
+    ${({ theme }) => focus({ theme })};
 `;
 
 type PartialStepperInputProps = Pick<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -375,6 +375,7 @@ export const StepperInput: FC<StepperInputProps> = ({
     const fieldId = useId(providedId);
     const intervalId = useRef<NodeJS.Timeout>();
     const timeoutId = useRef<NodeJS.Timeout>();
+    const holdRepeatStartedRef = useRef(false);
     const currentValueRef = useRef<Value>(defaultValue ?? null);
     const [validity, setValidity] = useState(valid ?? true);
     const [internalValue, setInternalValue] = useState<Value>(defaultValue ?? null);
@@ -448,36 +449,61 @@ export const StepperInput: FC<StepperInputProps> = ({
         }
     }, [max, min, onChange, value]);
 
-    const handleStep = useCallback((
+    const handleActivate = useCallback((
         direction: 'up' | 'down',
         event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
     ): void => {
-        if ('button' in event && event.button !== 0) return;
+        if ('type' in event && event.type === 'click' && holdRepeatStartedRef.current) {
+            holdRepeatStartedRef.current = false;
+            return;
+        }
         if (direction === 'up' && isIncrementDisabled) return;
         if (direction === 'down' && isDecrementDisabled) return;
 
         applySingleStep(direction);
-
-        if ('type' in event && event.type === 'mousedown') {
-            timeoutId.current = setTimeout(() => {
-                intervalId.current = setInterval(() => applySingleStep(direction), 50);
-            }, 500);
-        }
     }, [applySingleStep, isDecrementDisabled, isIncrementDisabled]);
 
-    const handleIncrement = useCallback((
-        event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
+    const handleHoldStart = useCallback((
+        direction: 'up' | 'down',
+        event: MouseEvent<HTMLButtonElement>,
     ): void => {
-        handleStep('up', event);
-    }, [handleStep]);
+        if (event.button !== 0) return;
+        if (direction === 'up' && isIncrementDisabled) return;
+        if (direction === 'down' && isDecrementDisabled) return;
 
-    const handleDecrement = useCallback((
+        holdRepeatStartedRef.current = false;
+        timeoutId.current = setTimeout(() => {
+            holdRepeatStartedRef.current = true;
+            intervalId.current = setInterval(() => applySingleStep(direction), 50);
+        }, 500);
+    }, [applySingleStep, isDecrementDisabled, isIncrementDisabled]);
+
+    const handleIncrementActivate = useCallback((
         event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
     ): void => {
-        handleStep('down', event);
-    }, [handleStep]);
+        handleActivate('up', event);
+    }, [handleActivate]);
+
+    const handleDecrementActivate = useCallback((
+        event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>,
+    ): void => {
+        handleActivate('down', event);
+    }, [handleActivate]);
+
+    const handleIncrementHoldStart = useCallback((
+        event: MouseEvent<HTMLButtonElement>,
+    ): void => {
+        handleHoldStart('up', event);
+    }, [handleHoldStart]);
+
+    const handleDecrementHoldStart = useCallback((
+        event: MouseEvent<HTMLButtonElement>,
+    ): void => {
+        handleHoldStart('down', event);
+    }, [handleHoldStart]);
 
     const handleStop = useCallback((): void => {
+        holdRepeatStartedRef.current = false;
         if (timeoutId.current) {
             clearTimeout(timeoutId.current);
             timeoutId.current = undefined;
@@ -529,6 +555,12 @@ export const StepperInput: FC<StepperInputProps> = ({
     }, [valid]);
 
     useEffect(() => () => handleStop(), [handleStop]);
+
+    useEffect(() => {
+        if (disabled || readOnly) {
+            handleStop();
+        }
+    }, [disabled, handleStop, readOnly]);
 
     const showErrorValueSegment = !readOnly && !validity;
 
@@ -589,7 +621,8 @@ export const StepperInput: FC<StepperInputProps> = ({
                             disabled={isDecrementDisabled}
                             frameEdge={validity ? undefined : 'leading'}
                             type="decrement"
-                            onPress={handleDecrement}
+                            onHoldStart={handleDecrementHoldStart}
+                            onPress={handleDecrementActivate}
                             onStop={handleStop}
                         />
                     )}
@@ -605,7 +638,8 @@ export const StepperInput: FC<StepperInputProps> = ({
                             disabled={isIncrementDisabled}
                             frameEdge={validity ? undefined : 'trailing'}
                             type="increment"
-                            onPress={handleIncrement}
+                            onHoldStart={handleIncrementHoldStart}
+                            onPress={handleIncrementActivate}
                             onStop={handleStop}
                         />
                     )}
