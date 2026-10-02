@@ -256,9 +256,16 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         return 'hover';
     }, [disabled, isMobile]);
 
+    const handleVisibleChange = useCallback((visible: boolean): void => {
+        setIsVisible(visible);
+        if (isMobile && !visible) {
+            setControlledTooltipOpen(undefined);
+        }
+    }, [isMobile]);
+
     const popperTooltip = usePopperTooltip({
         placement: isMobile ? 'top' : desktopPlacement,
-        onVisibleChange: setIsVisible,
+        onVisibleChange: handleVisibleChange,
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
@@ -276,13 +283,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
             setControlledTooltipOpen(true);
         }
     }, [delayed, disabled]);
-
-    useEffect(() => {
-        if (defaultOpen) {
-            openTooltip();
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     const closeTooltip = useCallback((): void => {
         if (delayed && tooltipTimeout) {
@@ -318,6 +318,13 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
             setControlledTooltipOpen(undefined);
         }
     }, [isMobile]);
+
+    useEffect(() => {
+        if (defaultOpen) {
+            openTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleBLur = useCallback((): void => {
         if (!isMobile) {

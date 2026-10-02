@@ -149,7 +149,7 @@ interface MenuOptionDisabled {
 }
 
 interface MenuOptionEnabled {
-    disabled?: false;
+    disabled?: boolean;
 }
 
 export type MenuOption = MenuOptionBase & MutuallyExclusive<MenuOptionDisabled, MenuOptionEnabled>;
@@ -412,7 +412,7 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
-                                defaultOpen={index === 0}
+                                defaultOpen={opt.focusIndex === 0}
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

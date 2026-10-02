@@ -320,4 +320,39 @@ describe('Menu', () => {
 
         expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
     });
+
+    it('should only show the tooltip of the overall first option when the menu has groups', () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    {
+                        groupLabel: 'Group 1',
+                        groupOptions: [
+                            {
+                                label: 'Option 1.1',
+                                disabled: true,
+                                tooltip: { label: 'Tooltip 1.1' },
+                            },
+                        ],
+                    },
+                    {
+                        groupLabel: 'Group 2',
+                        groupOptions: [
+                            {
+                                label: 'Option 2.1',
+                                disabled: true,
+                                tooltip: { label: 'Tooltip 2.1' },
+                            },
+                        ],
+                    },
+                ]}
+            />,
+        );
+
+        const tooltipContainers = screen.getAllByTestId('tooltip-content-container');
+
+        expect(tooltipContainers).toHaveLength(2);
+        expect(tooltipContainers[0]).toBeVisible();
+        expect(tooltipContainers[1]).not.toBeVisible();
+    });
 });

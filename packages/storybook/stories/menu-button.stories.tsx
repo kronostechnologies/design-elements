@@ -35,7 +35,12 @@ const optionsWithTooltips: MenuOption[] = [
     },
     {
         label: 'Option 3',
+        disabled: true,
         onClick: () => console.info('Option 3 clicked'),
+    },
+    {
+        label: 'Option 4',
+        onClick: () => console.info('Option 4 clicked'),
     },
 ];
 
