@@ -204,6 +204,11 @@ export interface TooltipProps {
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
+    /**
+     * Positioning strategy
+     * @default 'absolute'
+     */
+    strategy?: 'absolute' | 'fixed';
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -227,6 +232,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     label,
     mode = 'normal',
     confirmationLabel,
+    strategy = 'absolute',
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -250,14 +256,20 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         return 'hover';
     }, [disabled, isMobile]);
 
+    const handleVisibleChange = useCallback((visible: boolean): void => {
+        setIsVisible(visible);
+        if (isMobile && !visible) {
+            setControlledTooltipOpen(undefined);
+        }
+    }, [isMobile]);
+
     const popperTooltip = usePopperTooltip({
-        defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
-        onVisibleChange: setIsVisible,
+        onVisibleChange: handleVisibleChange,
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
-    }, { modifiers });
+    }, { modifiers, strategy });
 
     if (prevLabel.current !== currentLabel) {
         prevLabel.current = currentLabel;
@@ -306,6 +318,13 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
             setControlledTooltipOpen(undefined);
         }
     }, [isMobile]);
+
+    useEffect(() => {
+        if (defaultOpen) {
+            openTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleBLur = useCallback((): void => {
         if (!isMobile) {
