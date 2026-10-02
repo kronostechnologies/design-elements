@@ -31,23 +31,25 @@ import {
     stepperSegmentTrailingDividerStyles,
 } from './stepper-segment-styles';
 
-function getStepperControlWidth(device: DeviceContextProps): string {
+function getStepperControlWidth(
+    theme: ResolvedTheme,
+    device: DeviceContextProps,
+): string {
     if (device.isMobile) {
         return 'fit-content';
     }
 
-    return 'calc(2 * var(--size-2x) + 3rem)';
+    const buttonSize = theme.component['stepper-button-size'];
+    const valueWidth = theme.component['stepper-value-segment-width'];
+
+    return `calc(2 * ${buttonSize} + ${valueWidth})`;
 }
 
-function getMobileValueSegmentWidth(device: DeviceContextProps, readOnly?: boolean): string | undefined {
-    if (!device.isMobile || readOnly) {
-        return undefined;
-    }
-
-    return '3.25rem';
-}
-
-function getInputWidth(device: DeviceContextProps, readOnly?: boolean): string {
+function getInputWidth(
+    theme: ResolvedTheme,
+    device: DeviceContextProps,
+    readOnly?: boolean,
+): string {
     if (readOnly) {
         if (device.isMobile) {
             return 'auto';
@@ -56,11 +58,7 @@ function getInputWidth(device: DeviceContextProps, readOnly?: boolean): string {
         return '100%';
     }
 
-    if (!device.isMobile) {
-        return '3rem';
-    }
-
-    return getMobileValueSegmentWidth(device, readOnly) ?? 'auto';
+    return theme.component['stepper-value-segment-width'];
 }
 
 function getInputFlex(readOnly?: boolean): string {
@@ -72,6 +70,7 @@ function getInputFlex(readOnly?: boolean): string {
 }
 
 function getInputHeight(
+    theme: ResolvedTheme,
     device: DeviceContextProps,
     inErrorSegment?: boolean,
     readOnly?: boolean,
@@ -84,14 +83,11 @@ function getInputHeight(
         return 'auto';
     }
 
-    if (device.isMobile) {
-        return '3rem';
-    }
-
-    return 'var(--size-2x)';
+    return theme.component['stepper-segment-height'];
 }
 
 function getStyledInputWidth(
+    theme: ResolvedTheme,
     device: DeviceContextProps,
     readOnly?: boolean,
     inErrorSegment?: boolean,
@@ -100,7 +96,7 @@ function getStyledInputWidth(
         return '100%';
     }
 
-    return getInputWidth(device, readOnly);
+    return getInputWidth(theme, device, readOnly);
 }
 
 function getStyledInputFlex(
@@ -159,7 +155,7 @@ function getStepperBorderColor(
     if ($disabled) {
         return theme.component['stepper-button-disabled-border-color'];
     }
-    return theme.component['text-input-border-color'];
+    return theme.component['stepper-button-border-color'];
 }
 
 const StepperFieldContainer = styled(FieldContainer)<{ $isMobile: boolean }>`
@@ -193,7 +189,7 @@ const Wrapper = styled.div<StepperGroupProps & { device: DeviceContextProps }>`
  * Flex paints later siblings on top at shared edges ([−][value][+]). Overlap the trailing
  * button by 1px and stack above it so the right error edge stays visible.
  */
-const ErrorValueSegment = styled.div<{ device: DeviceContextProps }>`
+const ErrorValueSegment = styled.div`
     background: ${({ theme }) => theme.component['stepper-button-background-color']};
     border: 1px solid ${({ theme }) => theme.component['text-input-error-border-color']};
     border-radius: var(--border-radius-none, 0);
@@ -201,11 +197,11 @@ const ErrorValueSegment = styled.div<{ device: DeviceContextProps }>`
     display: flex;
     flex: ${() => getInputFlex(false)};
     flex-shrink: 0;
-    height: ${({ device }) => (device.isMobile ? '3rem' : 'var(--size-2x)')};
+    height: ${({ theme }) => theme.component['stepper-segment-height']};
     margin-right: -1px;
     pointer-events: none;
     position: relative;
-    width: ${({ device }) => getInputWidth(device, false)};
+    width: ${({ theme }) => theme.component['stepper-value-segment-width']};
     z-index: 2;
 
     &::after {
@@ -231,7 +227,7 @@ const ReadOnlyWrapper = styled.div<{ device: DeviceContextProps }>`
     box-sizing: border-box;
     display: flex;
     max-width: 100%;
-    width: ${({ device }) => getStepperControlWidth(device)};
+    width: ${({ theme, device }) => getStepperControlWidth(theme, device)};
 
     ${({ device }) => device.isMobile && css`
         padding: var(--spacing-1halfx);
@@ -255,24 +251,37 @@ const inputSegmentStyles = css<StyledInputProps>`
     box-sizing: border-box;
     color: ${({ theme, $readOnly }) => getInputTextColor(theme, $readOnly)};
     font-family: inherit;
-    font-size: ${({ device }) => (device.isMobile ? '1rem' : '0.875rem')};
-    height: ${({ device, $inErrorSegment, $readOnly }) => getInputHeight(device, $inErrorSegment, $readOnly)};
-    letter-spacing: ${({ device }) => (device.isMobile ? '0.02875rem' : '0.015rem')};
-    line-height: 1.5rem;
+    font-size: ${({ theme }) => theme.component['stepper-value-font-size']};
+    height:
+        ${({
+        theme,
+        device,
+        $inErrorSegment,
+        $readOnly,
+    }) => getInputHeight(theme, device, $inErrorSegment, $readOnly)};
+    letter-spacing: ${({ theme }) => theme.component['stepper-value-letter-spacing']};
+    line-height: ${({ theme }) => theme.component['stepper-value-line-height']};
     margin: 0;
     outline: none;
     padding:
         ${({
-            device,
-            $readOnly,
-        }) => {
-            if ($readOnly && device.isMobile) {
-                return '0 var(--spacing-1x)';
-            }
-            return device.isMobile ? '0 var(--spacing-1halfx)' : '0 var(--spacing-1x)';
-        }};
+        theme,
+        $readOnly,
+        device,
+    }) => {
+        if ($readOnly && device.isMobile) {
+            return '0 var(--spacing-1x)';
+        }
+        return `0 ${theme.component['stepper-value-padding-inline']}`;
+    }};
     text-align: left;
-    width: ${({ device, $readOnly, $inErrorSegment }) => getStyledInputWidth(device, $readOnly, $inErrorSegment)};
+    width:
+        ${({
+        theme,
+        device,
+        $readOnly,
+        $inErrorSegment,
+    }) => getStyledInputWidth(theme, device, $readOnly, $inErrorSegment)};
     ${({ $inErrorSegment }) => !$inErrorSegment && css`
         z-index: 2;
     `};
@@ -628,7 +637,7 @@ export const StepperInput: FC<StepperInputProps> = ({
                         />
                     )}
                     {showErrorValueSegment ? (
-                        <ErrorValueSegment device={device}>
+                        <ErrorValueSegment>
                             {inputElement}
                         </ErrorValueSegment>
                     ) : (

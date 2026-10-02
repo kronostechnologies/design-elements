@@ -3,7 +3,6 @@ import styled, { css, type FlattenInterpolation, type ThemeProps } from 'styled-
 import { useTranslation } from '../../i18n/use-translation';
 import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
-import { useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon } from '../icon';
 import {
     stepperSegmentLeadingCornerStyles,
@@ -19,7 +18,6 @@ export type StepperButtonFrameEdge = 'leading' | 'trailing';
 
 interface StyledStepperButtonProps {
     $frameEdge?: StepperButtonFrameEdge;
-    $isMobile: boolean;
     $type: StepperButtonType;
 }
 
@@ -30,10 +28,10 @@ const buttonStyles = css<StyledStepperButtonProps>`
     cursor: pointer;
     display: flex;
     flex-shrink: 0;
-    height: ${({ $isMobile }) => ($isMobile ? '3rem' : 'var(--size-2x)')};
+    height: ${({ theme }) => theme.component['stepper-button-size']};
     justify-content: center;
-    padding: ${({ $isMobile }) => ($isMobile ? 'var(--spacing-1halfx)' : 'var(--spacing-1x)')};
-    width: ${({ $isMobile }) => ($isMobile ? '3rem' : 'var(--size-2x)')};
+    padding: ${({ theme }) => theme.component['stepper-button-padding']};
+    width: ${({ theme }) => theme.component['stepper-button-size']};
 
     &:hover:not(:disabled) {
         background: ${({ theme }) => theme.component['stepper-button-hover-background-color']};
@@ -52,8 +50,8 @@ const buttonStyles = css<StyledStepperButtonProps>`
 
     > svg {
         color: inherit;
-        height: ${({ $isMobile }) => ($isMobile ? '1.25rem' : 'var(--size-1x)')};
-        width: ${({ $isMobile }) => ($isMobile ? '1.25rem' : 'var(--size-1x)')};
+        height: ${({ theme }) => theme.component['stepper-icon-size']};
+        width: ${({ theme }) => theme.component['stepper-icon-size']};
     }
 `;
 
@@ -148,7 +146,6 @@ export const StepperButton: FC<StepperButtonProps> = ({
     onStop,
 }) => {
     const { t } = useTranslation('stepper-buttons');
-    const { isMobile } = useDeviceContext();
     const { iconName, testId, translationKey } = STEPPER_BUTTON_META[type];
 
     const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>): void => {
@@ -161,7 +158,6 @@ export const StepperButton: FC<StepperButtonProps> = ({
     return (
         <StyledStepperButton
             $frameEdge={frameEdge}
-            $isMobile={isMobile}
             $type={type}
             aria-label={t(translationKey)}
             data-testid={testId}
@@ -174,7 +170,7 @@ export const StepperButton: FC<StepperButtonProps> = ({
             onPointerLeave={onStop}
             onPointerUp={onStop}
         >
-            <Icon name={iconName} size={isMobile ? '20' : '16'} />
+            <Icon name={iconName} size="16" />
         </StyledStepperButton>
     );
 };
