@@ -145,7 +145,7 @@ interface MenuOptionBase {
 
 interface MenuOptionDisabled {
     disabled: true;
-    tooltip?: TooltipProps;
+    tooltip?: Omit<TooltipProps, 'onMouseEnter' | 'open' | 'strategy'>;
 }
 
 interface MenuOptionEnabled {
