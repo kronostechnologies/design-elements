@@ -412,7 +412,8 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
-                                defaultOpen={opt.focusIndex === 0}
+                                open={listItems === activeMenuList && opt.focusIndex === focusedIndex}
+                                onMouseEnter={() => setFocusedIndex(opt.focusIndex)}
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

@@ -36,6 +36,29 @@ describe('Tooltip', () => {
             expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
         });
 
+        it('closes a default open tooltip when clicking outside', async () => {
+            renderWithProviders(
+                <>
+                    <Tooltip label="Test Content" defaultOpen />
+                    <button type="button">Outside</button>
+                </>,
+                'desktop',
+            );
+
+            await userEvent.click(screen.getByText('Outside'));
+
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+        });
+
+        it('opens and closes when the open prop changes', () => {
+            const { rerender } = renderWithProviders(<Tooltip label="Test Content" open />, 'desktop');
+            expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+
+            rerender(<Tooltip label="Test Content" open={false} />);
+
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+        });
+
         it('closes on mouseLeave given tooltip is open', async () => {
             renderWithProviders(
                 <Tooltip label="Test Content" defaultOpen />,

@@ -321,6 +321,32 @@ describe('Menu', () => {
         expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
     });
 
+    it('should close the first option tooltip when hovering another option with a tooltip', async () => {
+        const optionsWithTooltip: MenuOption[] = [
+            { label: 'Mango', disabled: true, tooltip: { label: 'First tooltip' } },
+            { label: 'Peach', disabled: true, tooltip: { label: 'Second tooltip' } },
+        ];
+        renderWithProviders(<Menu options={optionsWithTooltip} />, 'desktop');
+
+        await userEvent.hover(screen.getAllByTestId('tooltip')[1]);
+
+        const [first, second] = screen.getAllByTestId('tooltip-content-container');
+        expect(second).toBeVisible();
+        expect(first).not.toBeVisible();
+    });
+
+    it('should show the tooltip of the highlighted option when navigating with the keyboard', async () => {
+        const optionsWithTooltip: MenuOption[] = [
+            { label: 'Mango' },
+            { label: 'Peach', disabled: true, tooltip: { label: 'Tooltip' } },
+        ];
+        renderWithProviders(<Menu options={optionsWithTooltip} />, 'desktop');
+
+        await userEvent.keyboard('{ArrowDown}');
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+    });
+
     it('should only show the tooltip of the overall first option when the menu has groups', () => {
         renderWithProviders(
             <Menu

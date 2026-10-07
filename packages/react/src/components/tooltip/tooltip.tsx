@@ -192,6 +192,10 @@ export interface TooltipProps {
     confirmationLabel?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
+    /** Called when the pointer enters the tooltip trigger on desktop */
+    onMouseEnter?(): void;
+    /** Opens or closes the tooltip whenever the value changes. Hover and focus still work in between. */
+    open?: boolean;
     /**
      * Tooltip placement on desktop (always top on mobile)
      * @default right
@@ -231,6 +235,8 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     invertedIcon = false,
     label,
     mode = 'normal',
+    onMouseEnter,
+    open,
     confirmationLabel,
     strategy = 'absolute',
 }) => {
@@ -258,10 +264,8 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
 
     const handleVisibleChange = useCallback((visible: boolean): void => {
         setIsVisible(visible);
-        if (isMobile && !visible) {
-            setControlledTooltipOpen(undefined);
-        }
-    }, [isMobile]);
+        setControlledTooltipOpen(visible);
+    }, []);
 
     const popperTooltip = usePopperTooltip({
         placement: isMobile ? 'top' : desktopPlacement,
@@ -326,6 +330,15 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    useEffect(() => {
+        if (open === true) {
+            openTooltip();
+        } else if (open === false) {
+            closeTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [open]);
+
     const handleBLur = useCallback((): void => {
         if (!isMobile) {
             closeTooltip();
@@ -345,8 +358,9 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
             openTooltip();
+            onMouseEnter?.();
         }
-    }, [isMobile, openTooltip]);
+    }, [isMobile, openTooltip, onMouseEnter]);
 
     const handleMouseLeave = useCallback((): void => {
         if (!isMobile) {
