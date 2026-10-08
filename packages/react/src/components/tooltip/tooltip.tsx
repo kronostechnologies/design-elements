@@ -17,6 +17,7 @@ import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
+import { activeElementIsInside } from '../../utils/dom';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
@@ -192,6 +193,10 @@ export interface TooltipProps {
     confirmationLabel?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
+    /** Called when the pointer enters the tooltip trigger on desktop */
+    onMouseEnter?(): void;
+    /** Opens or closes the tooltip whenever the value changes. Hover and focus still work in between. */
+    open?: boolean;
     /**
      * Tooltip placement on desktop (always top on mobile)
      * @default right
@@ -204,6 +209,11 @@ export interface TooltipProps {
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
+    /**
+     * Positioning strategy
+     * @default 'absolute'
+     */
+    strategy?: 'absolute' | 'fixed';
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -226,7 +236,10 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     invertedIcon = false,
     label,
     mode = 'normal',
+    onMouseEnter,
+    open,
     confirmationLabel,
+    strategy = 'absolute',
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
@@ -250,14 +263,18 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         return 'hover';
     }, [disabled, isMobile]);
 
+    const handleVisibleChange = useCallback((visible: boolean): void => {
+        setIsVisible(visible);
+        setControlledTooltipOpen(visible);
+    }, []);
+
     const popperTooltip = usePopperTooltip({
-        defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
-        onVisibleChange: setIsVisible,
+        onVisibleChange: handleVisibleChange,
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
-    }, { modifiers });
+    }, { modifiers, strategy });
 
     if (prevLabel.current !== currentLabel) {
         prevLabel.current = currentLabel;
@@ -307,6 +324,22 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile]);
 
+    useEffect(() => {
+        if (defaultOpen) {
+            openTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        if (open === true) {
+            openTooltip();
+        } else if (open === false) {
+            closeTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [open]);
+
     const handleBLur = useCallback((): void => {
         if (!isMobile) {
             closeTooltip();
@@ -319,15 +352,20 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
 
     const handleFocus = useCallback((): void => {
         if (!isMobile) {
-            openTooltip();
+            setTimeout(() => {
+                if (activeElementIsInside(popperTooltip.triggerRef)) {
+                    openTooltip();
+                }
+            }, 0);
         }
-    }, [isMobile, openTooltip]);
+    }, [isMobile, openTooltip, popperTooltip.triggerRef]);
 
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
             openTooltip();
+            onMouseEnter?.();
         }
-    }, [isMobile, openTooltip]);
+    }, [isMobile, openTooltip, onMouseEnter]);
 
     const handleMouseLeave = useCallback((): void => {
         if (!isMobile) {

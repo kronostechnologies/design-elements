@@ -6,6 +6,24 @@ import { renderWithProviders } from '../../test-utils/renderer';
 import { Tooltip } from './tooltip';
 
 describe('Tooltip', () => {
+    describe('mobile', () => {
+        it('closes a default open tooltip when another tooltip is opened', async () => {
+            renderWithProviders(
+                <>
+                    <Tooltip label="First" defaultOpen><button type="button">First trigger</button></Tooltip>
+                    <Tooltip label="Second"><button type="button">Second trigger</button></Tooltip>
+                </>,
+                'mobile',
+            );
+
+            await userEvent.click(screen.getByText('Second trigger'));
+
+            const [first, second] = screen.getAllByTestId('tooltip-content-container');
+            expect(second).toBeVisible();
+            expect(first).not.toBeVisible();
+        });
+    });
+
     describe('desktop', () => {
         it('opens on mouseEnter', async () => {
             renderWithProviders(
@@ -16,6 +34,29 @@ describe('Tooltip', () => {
             await userEvent.hover(screen.getByTestId('tooltip'));
 
             expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+        });
+
+        it('closes a default open tooltip when clicking outside', async () => {
+            renderWithProviders(
+                <>
+                    <Tooltip label="Test Content" defaultOpen />
+                    <button type="button">Outside</button>
+                </>,
+                'desktop',
+            );
+
+            await userEvent.click(screen.getByText('Outside'));
+
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+        });
+
+        it('opens and closes when the open prop changes', () => {
+            const { rerender } = renderWithProviders(<Tooltip label="Test Content" open />, 'desktop');
+            expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+
+            rerender(<Tooltip label="Test Content" open={false} />);
+
+            expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
         });
 
         it('closes on mouseLeave given tooltip is open', async () => {
@@ -174,5 +215,17 @@ describe('Tooltip', () => {
         );
 
         expect(screen.getByTestId('icon-children')).toBeInTheDocument();
+    });
+
+    it('opens on mouseEnter given strategy is fixed', async () => {
+        renderWithProviders(
+            <Tooltip label="Test Content" strategy="fixed" />,
+            'desktop',
+        );
+
+        await userEvent.hover(screen.getByTestId('tooltip'));
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+        expect(screen.getByTestId('tooltip-content-container')).toHaveStyle({ position: 'fixed' });
     });
 });

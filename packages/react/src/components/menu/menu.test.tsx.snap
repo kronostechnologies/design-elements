@@ -53,8 +53,8 @@ exports[`Menu matches the snapshot (menu with groups) 1`] = `
   color: #000000;
 }
 
-.c2[disabled],
-.c2[disabled] * {
+.c2[aria-disabled='true'],
+.c2[aria-disabled='true'] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
@@ -219,8 +219,8 @@ exports[`Menu matches the snapshot (menu with icons) 1`] = `
   color: #000000;
 }
 
-.c1[disabled],
-.c1[disabled] * {
+.c1[aria-disabled='true'],
+.c1[aria-disabled='true'] * {
   color: #B7BBC2;
   cursor: default;
   fill: #B7BBC2;
