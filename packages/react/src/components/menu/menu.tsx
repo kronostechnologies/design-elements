@@ -96,8 +96,8 @@ const Button = styled.button<ButtonProps>`
         color: ${({ theme }) => theme.component['menu-item-hover-text-color']};
     }
 
-    &[disabled],
-    &[disabled] * {
+    &[aria-disabled='true'],
+    &[aria-disabled='true'] * {
         color: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
         cursor: default;
         fill: ${({ theme }) => theme.component['menu-item-disabled-text-color']};
@@ -246,9 +246,10 @@ export const Menu = forwardRef(({
     const device = useDeviceContext();
     const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);
     const [focusedIndex, setFocusedIndex] = useState(0);
+    const [openTooltipIndex, setOpenTooltipIndex] = useState(0);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
-    const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
+    const focusedElementRef = useRef<HTMLButtonElement | null>(null);
 
     const { scrollIntoView } = useScrollIntoView({
         container: containerRef,
@@ -258,13 +259,11 @@ export const Menu = forwardRef(({
     const focusElementAtIndex = useCallback((index: number): void => {
         const option = getAllOptionsInLevel(activeMenuList)[index]?.ref.current;
         if (option) {
-            setFocusedElement((previousFocused) => {
-                addFocusVisibleActive(option);
-                option.focus({ preventScroll: true });
-                scrollIntoView(option);
-                removeFocusVisibleActive(previousFocused);
-                return option;
-            });
+            addFocusVisibleActive(option);
+            option.focus({ preventScroll: true });
+            scrollIntoView(option);
+            removeFocusVisibleActive(focusedElementRef.current);
+            focusedElementRef.current = option;
         }
     }, [activeMenuList, scrollIntoView]);
 
@@ -275,6 +274,10 @@ export const Menu = forwardRef(({
     }, [focusElementAtIndex, focusedIndex, isMouseNavigating]);
 
     function handleOptionClick(option: ListOption): void {
+        if (option.disabled) {
+            return;
+        }
+
         option.onClick?.();
 
         if (option.options) {
@@ -377,6 +380,7 @@ export const Menu = forwardRef(({
     function renderItems(listItems: ListItem[]): ReactElement {
         const isSubMenu = listItems !== list;
         const getTestId = (index: number): string => (isSubMenu ? `sub-menu-option-${index}` : `menu-option-${index}`);
+        const activeOptions = getAllOptionsInLevel(activeMenuList);
         const hasAnyOptionWithIcon = listItems.some((opt) => !isListGroup(opt) && opt.iconName != null);
 
         const renderButton = (opt: ListOption, index: number): ReactElement => (
@@ -389,7 +393,7 @@ export const Menu = forwardRef(({
                 type="button"
                 role="menuitem"
                 tabIndex={-1}
-                disabled={opt.disabled}
+                aria-disabled={opt.disabled}
                 onClick={() => handleOptionClick(opt)}
                 onMouseEnter={() => handleMouseEnter(opt)}
                 onMouseLeave={() => handleMouseLeave(opt)}
@@ -412,8 +416,8 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
-                                open={listItems === activeMenuList && opt.focusIndex === focusedIndex}
-                                onMouseEnter={() => setFocusedIndex(opt.focusIndex)}
+                                open={activeOptions.includes(opt) && opt.focusIndex === openTooltipIndex}
+                                onMouseEnter={() => setOpenTooltipIndex(opt.focusIndex)}
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

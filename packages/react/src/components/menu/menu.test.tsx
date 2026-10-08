@@ -347,6 +347,72 @@ describe('Menu', () => {
         expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
     });
 
+    it('should show the tooltip of the highlighted option when the menu has groups', async () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    { groupLabel: 'Group 1', groupOptions: [{ label: 'Option 1.1' }] },
+                    {
+                        groupLabel: 'Group 2',
+                        groupOptions: [{ label: 'Option 2.1', disabled: true, tooltip: { label: 'Tooltip 2.1' } }],
+                    },
+                ]}
+            />,
+            'desktop',
+        );
+
+        await userEvent.keyboard('{ArrowDown}');
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+    });
+
+    it('should not select a disabled option when it is activated', async () => {
+        const onOptionSelect = jest.fn();
+        const onClick = jest.fn();
+        renderWithProviders(
+            <Menu
+                options={[{ label: 'Mango' }, { label: 'Peach', disabled: true, onClick }]}
+                onOptionSelect={onOptionSelect}
+            />,
+        );
+
+        screen.getByRole('menuitem', { name: 'Peach' }).focus();
+        await userEvent.keyboard('{Enter}');
+
+        expect(onClick).not.toHaveBeenCalled();
+        expect(onOptionSelect).not.toHaveBeenCalled();
+    });
+
+    it('should move focus to a disabled option with a tooltip using the keyboard', async () => {
+        renderWithProviders(
+            <Menu options={[{ label: 'Mango' }, { label: 'Peach', disabled: true, tooltip: { label: 'Tooltip' } }]} />,
+            'desktop',
+        );
+
+        await userEvent.keyboard('{ArrowDown}');
+
+        expect(screen.getByRole('menuitem', { name: 'Peach' })).toHaveFocus();
+        expect(screen.getByRole('menuitem', { name: 'Peach' })).toHaveAttribute('aria-disabled', 'true');
+    });
+
+    it('should not update tooltips while rendering when moving focus between disabled options', async () => {
+        const consoleError = jest.spyOn(console, 'error').mockImplementation(() => undefined);
+        renderWithProviders(
+            <Menu
+                options={[
+                    { label: 'Mango', disabled: true, tooltip: { label: 'First tooltip' } },
+                    { label: 'Peach', disabled: true, tooltip: { label: 'Second tooltip' } },
+                ]}
+            />,
+            'desktop',
+        );
+
+        await userEvent.keyboard('{ArrowDown}');
+
+        expect(consoleError).not.toHaveBeenCalled();
+        consoleError.mockRestore();
+    });
+
     it('should only show the tooltip of the overall first option when the menu has groups', () => {
         renderWithProviders(
             <Menu

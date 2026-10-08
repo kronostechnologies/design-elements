@@ -17,6 +17,7 @@ import styled, { css } from 'styled-components';
 import { useTheme } from '../../hooks/use-theme';
 import { type ResolvedTheme } from '../../themes';
 import { focus } from '../../utils/css-state';
+import { activeElementIsInside } from '../../utils/dom';
 import { v4 as uuid } from '../../utils/uuid';
 import { useDeviceContext } from '../device-context-provider';
 import { Icon } from '../icon';
@@ -351,9 +352,13 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
 
     const handleFocus = useCallback((): void => {
         if (!isMobile) {
-            openTooltip();
+            setTimeout(() => {
+                if (activeElementIsInside(popperTooltip.triggerRef)) {
+                    openTooltip();
+                }
+            }, 0);
         }
-    }, [isMobile, openTooltip]);
+    }, [isMobile, openTooltip, popperTooltip.triggerRef]);
 
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {
