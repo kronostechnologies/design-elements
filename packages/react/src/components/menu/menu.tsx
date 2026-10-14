@@ -380,7 +380,7 @@ export const Menu = forwardRef(({
     function renderItems(listItems: ListItem[]): ReactElement {
         const isSubMenu = listItems !== list;
         const getTestId = (index: number): string => (isSubMenu ? `sub-menu-option-${index}` : `menu-option-${index}`);
-        const activeOptions = getAllOptionsInLevel(activeMenuList);
+        const topLevelOptions = getAllOptionsInLevel(list);
         const hasAnyOptionWithIcon = listItems.some((opt) => !isListGroup(opt) && opt.iconName != null);
 
         const renderButton = (opt: ListOption, index: number): ReactElement => (
@@ -416,7 +416,7 @@ export const Menu = forwardRef(({
                             <MenuItemTooltip
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
-                                open={activeOptions.includes(opt) && opt.focusIndex === openTooltipIndex}
+                                open={topLevelOptions.includes(opt) ? opt.focusIndex === openTooltipIndex : undefined}
                                 onMouseEnter={() => setOpenTooltipIndex(opt.focusIndex)}
                                 strategy="fixed"
                             >

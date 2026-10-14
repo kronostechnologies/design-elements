@@ -53,10 +53,12 @@ describe('Tooltip', () => {
         it('opens and closes when the open prop changes', () => {
             const { rerender } = renderWithProviders(<Tooltip label="Test Content" open />, 'desktop');
             expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+            expect(screen.getByTestId('tooltip-content-container')).toHaveAttribute('aria-hidden', 'false');
 
             rerender(<Tooltip label="Test Content" open={false} />);
 
             expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+            expect(screen.getByTestId('tooltip-content-container')).toHaveAttribute('aria-hidden', 'true');
         });
 
         it('closes on mouseLeave given tooltip is open', async () => {

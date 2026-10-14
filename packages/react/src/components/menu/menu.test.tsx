@@ -413,6 +413,24 @@ describe('Menu', () => {
         consoleError.mockRestore();
     });
 
+    it('should not open the tooltip of a sub menu option when hovering its parent option', async () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    {
+                        label: 'Parent',
+                        options: [{ label: 'Child', disabled: true, tooltip: { label: 'Child tooltip' } }],
+                    },
+                ]}
+            />,
+            'desktop',
+        );
+
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Parent' }));
+
+        expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+    });
+
     it('should only show the tooltip of the overall first option when the menu has groups', () => {
         renderWithProviders(
             <Menu

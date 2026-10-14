@@ -245,7 +245,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
-    const [isVisible, setIsVisible] = useState(defaultOpen);
     const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
     const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -264,7 +263,6 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [disabled, isMobile]);
 
     const handleVisibleChange = useCallback((visible: boolean): void => {
-        setIsVisible(visible);
         setControlledTooltipOpen(visible);
     }, []);
 
@@ -280,6 +278,8 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         prevLabel.current = currentLabel;
         popperTooltip?.update?.();
     }
+
+    const isVisible = popperTooltip.visible;
 
     const openTooltip = useCallback((): void => {
         if (delayed && !disabled) {
