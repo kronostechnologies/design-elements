@@ -334,7 +334,8 @@ export const Menu = forwardRef(({
             }
             case 'ArrowRight': {
                 event.preventDefault();
-                const subMenu = activeMenuOptions[focusedIndex].options;
+                const focusedOption = activeMenuOptions[focusedIndex];
+                const subMenu = focusedOption.disabled ? undefined : focusedOption.options;
 
                 if (subMenu) {
                     setActiveMenuList(subMenu);
@@ -381,6 +382,11 @@ export const Menu = forwardRef(({
         const isSubMenu = listItems !== list;
         const getTestId = (index: number): string => (isSubMenu ? `sub-menu-option-${index}` : `menu-option-${index}`);
         const topLevelOptions = getAllOptionsInLevel(list);
+        const updateOpenTooltipIndex = (opt: ListOption): void => {
+            if (topLevelOptions.includes(opt)) {
+                setOpenTooltipIndex(opt.focusIndex);
+            }
+        };
         const hasAnyOptionWithIcon = listItems.some((opt) => !isListGroup(opt) && opt.iconName != null);
 
         const renderButton = (opt: ListOption, index: number): ReactElement => (
@@ -395,6 +401,7 @@ export const Menu = forwardRef(({
                 tabIndex={-1}
                 aria-disabled={opt.disabled}
                 onClick={() => handleOptionClick(opt)}
+                onFocus={() => updateOpenTooltipIndex(opt)}
                 onMouseEnter={() => handleMouseEnter(opt)}
                 onMouseLeave={() => handleMouseLeave(opt)}
                 ref={opt.ref}
@@ -417,7 +424,7 @@ export const Menu = forwardRef(({
                                 // eslint-disable-next-line react/jsx-props-no-spreading
                                 {...opt.tooltip}
                                 open={topLevelOptions.includes(opt) ? opt.focusIndex === openTooltipIndex : undefined}
-                                onMouseEnter={() => setOpenTooltipIndex(opt.focusIndex)}
+                                onMouseEnter={() => updateOpenTooltipIndex(opt)}
                                 strategy="fixed"
                             >
                                 {renderButton(opt, index)}

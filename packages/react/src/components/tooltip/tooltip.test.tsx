@@ -61,6 +61,26 @@ describe('Tooltip', () => {
             expect(screen.getByTestId('tooltip-content-container')).toHaveAttribute('aria-hidden', 'true');
         });
 
+        describe('given fake timers', () => {
+            beforeEach(() => {
+                jest.useFakeTimers();
+            });
+
+            afterEach(() => {
+                jest.useRealTimers();
+            });
+
+            it('stays closed given defaultOpen and delayed when open is false', () => {
+                renderWithProviders(<Tooltip label="Test Content" defaultOpen delayed open={false} />, 'desktop');
+
+                act(() => {
+                    jest.advanceTimersByTime(1000);
+                });
+
+                expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+            });
+        });
+
         it('closes on mouseLeave given tooltip is open', async () => {
             renderWithProviders(
                 <Tooltip label="Test Content" defaultOpen />,

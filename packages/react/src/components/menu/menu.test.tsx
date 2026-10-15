@@ -431,6 +431,60 @@ describe('Menu', () => {
         expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
     });
 
+    it('should not open a top-level tooltip when hovering a sub menu option tooltip', async () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    { label: 'Mango', disabled: true, tooltip: { label: 'Mango tooltip' } },
+                    { label: 'Peach', disabled: true, tooltip: { label: 'Peach tooltip' } },
+                    {
+                        label: 'Parent',
+                        options: [{ label: 'Child', disabled: true, tooltip: { label: 'Child tooltip' } }],
+                    },
+                ]}
+            />,
+            'desktop',
+        );
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Peach' }).closest('[data-testid="tooltip"]')!);
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Parent' }));
+
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Child' }).closest('[data-testid="tooltip"]')!);
+
+        expect(screen.getByText('Child tooltip')).toBeVisible();
+        expect(screen.getByText('Mango tooltip')).not.toBeVisible();
+    });
+
+    it('should keep a single tooltip open when hovering after keyboard navigation', async () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    { label: 'Mango', disabled: true, tooltip: { label: 'Mango tooltip' } },
+                    { label: 'Peach', disabled: true, tooltip: { label: 'Peach tooltip' } },
+                ]}
+            />,
+            'desktop',
+        );
+        await userEvent.keyboard('{ArrowDown}');
+
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Mango' }).closest('[data-testid="tooltip"]')!);
+
+        expect(screen.getByText('Mango tooltip')).toBeVisible();
+        expect(screen.getByText('Peach tooltip')).not.toBeVisible();
+    });
+
+    it('should not open the sub menu of a disabled option with ArrowRight', async () => {
+        renderWithProviders(
+            <Menu
+                options={[{ label: 'Parent', disabled: true, options: [{ label: 'Child' }] }]}
+            />,
+            'desktop',
+        );
+
+        await userEvent.keyboard('{ArrowRight}');
+
+        expect(screen.queryByRole('menuitem', { name: 'Child' })).not.toBeInTheDocument();
+    });
+
     it('should only show the tooltip of the overall first option when the menu has groups', () => {
         renderWithProviders(
             <Menu

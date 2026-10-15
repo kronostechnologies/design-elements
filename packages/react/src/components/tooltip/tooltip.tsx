@@ -325,7 +325,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [isMobile]);
 
     useEffect(() => {
-        if (defaultOpen) {
+        if (defaultOpen && open === undefined) {
             openTooltip();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
