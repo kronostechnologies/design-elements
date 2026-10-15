@@ -268,4 +268,146 @@ describe('Menu', () => {
 
         expect(asFragment()).toMatchSnapshot();
     });
+
+    it('should show tooltip when hovering a disabled option with a tooltip', async () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                disabled: true,
+                tooltip: { label: 'This is a tooltip' },
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        await userEvent.hover(screen.getByTestId('tooltip'));
+
+        expect(screen.getByRole('tooltip')).toBeInTheDocument();
+        expect(screen.getByRole('tooltip')).toHaveTextContent('This is a tooltip');
+    });
+
+    it('should show tooltip when the menu opens given the first option is disabled with a tooltip', () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                disabled: true,
+                tooltip: { label: 'This is a tooltip' },
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        expect(screen.getByTestId('tooltip-content-container')).toBeVisible();
+    });
+
+    it('should not show tooltip when the menu opens given a disabled option with a tooltip is not first', () => {
+        const optionsWithTooltip: MenuOption[] = [
+            {
+                label: 'Mango',
+                onClick: jest.fn(),
+            },
+            {
+                label: 'Peach',
+                disabled: true,
+                tooltip: { label: 'This is a tooltip' },
+                onClick: jest.fn(),
+            },
+        ];
+
+        renderWithProviders(<Menu options={optionsWithTooltip} />);
+
+        expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+    });
+
+    it('should close the first option tooltip when hovering another option with a tooltip', async () => {
+        const optionsWithTooltip: MenuOption[] = [
+            { label: 'Mango', disabled: true, tooltip: { label: 'First tooltip' } },
+            { label: 'Peach', disabled: true, tooltip: { label: 'Second tooltip' } },
+        ];
+        renderWithProviders(<Menu options={optionsWithTooltip} />, 'desktop');
+
+        await userEvent.hover(screen.getAllByTestId('tooltip')[1]);
+
+        const [first, second] = screen.getAllByTestId('tooltip-content-container');
+        expect(second).toBeVisible();
+        expect(first).not.toBeVisible();
+    });
+
+    it('should not open the tooltip of a sub menu option when hovering its parent option', async () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    {
+                        label: 'Parent',
+                        options: [{ label: 'Child', disabled: true, tooltip: { label: 'Child tooltip' } }],
+                    },
+                ]}
+            />,
+            'desktop',
+        );
+
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Parent' }));
+
+        expect(screen.getByTestId('tooltip-content-container')).not.toBeVisible();
+    });
+
+    it('should not open a top-level tooltip when hovering a sub menu option tooltip', async () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    { label: 'Mango', disabled: true, tooltip: { label: 'Mango tooltip' } },
+                    { label: 'Peach', disabled: true, tooltip: { label: 'Peach tooltip' } },
+                    {
+                        label: 'Parent',
+                        options: [{ label: 'Child', disabled: true, tooltip: { label: 'Child tooltip' } }],
+                    },
+                ]}
+            />,
+            'desktop',
+        );
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Peach' }).closest('[data-testid="tooltip"]')!);
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Parent' }));
+
+        await userEvent.hover(screen.getByRole('menuitem', { name: 'Child' }).closest('[data-testid="tooltip"]')!);
+
+        expect(screen.getByText('Child tooltip')).toBeVisible();
+        expect(screen.getByText('Mango tooltip')).not.toBeVisible();
+    });
+
+    it('should only show the tooltip of the overall first option when the menu has groups', () => {
+        renderWithProviders(
+            <Menu
+                options={[
+                    {
+                        groupLabel: 'Group 1',
+                        groupOptions: [
+                            {
+                                label: 'Option 1.1',
+                                disabled: true,
+                                tooltip: { label: 'Tooltip 1.1' },
+                            },
+                        ],
+                    },
+                    {
+                        groupLabel: 'Group 2',
+                        groupOptions: [
+                            {
+                                label: 'Option 2.1',
+                                disabled: true,
+                                tooltip: { label: 'Tooltip 2.1' },
+                            },
+                        ],
+                    },
+                ]}
+            />,
+        );
+
+        const tooltipContainers = screen.getAllByTestId('tooltip-content-container');
+
+        expect(tooltipContainers).toHaveLength(2);
+        expect(tooltipContainers[0]).toBeVisible();
+        expect(tooltipContainers[1]).not.toBeVisible();
+    });
 });

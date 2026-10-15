@@ -13,11 +13,13 @@ import {
     useState,
 } from 'react';
 import styled from 'styled-components';
+import { Tooltip, type TooltipProps } from '../tooltip';
 import { useScrollIntoView } from '../../hooks/use-scroll-into-view';
 import { getNextElement, getPreviousElement } from '../../utils/array';
 import { addFocusVisibleActive, focus, removeFocusVisibleActive } from '../../utils/css-state';
 import { mergeRefs } from '../../utils/react-merge-refs';
 import { isLetterOrNumber } from '../../utils/regex';
+import type { MutuallyExclusive } from '../../utils/types';
 import { v4 as uuid } from '../../utils/uuid';
 import { type DeviceContextProps, useDeviceContext } from '../device-context-provider/device-context-provider';
 import { Icon, type IconName } from '../icon';
@@ -130,13 +132,27 @@ const Label = styled.span`
     white-space: nowrap;
 `;
 
-export interface MenuOption {
+const MenuItemTooltip = styled(Tooltip)`
+    width: 100%;
+`;
+
+interface MenuOptionBase {
     label: string;
     iconName?: IconName;
     options?: MenuItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
-    disabled?: boolean;
     onClick?(): void;
 }
+
+interface MenuOptionDisabled {
+    disabled: true;
+    tooltip?: Omit<TooltipProps, 'open' | 'strategy'>;
+}
+
+interface MenuOptionEnabled {
+    disabled?: boolean;
+}
+
+export type MenuOption = MenuOptionBase & MutuallyExclusive<MenuOptionDisabled, MenuOptionEnabled>;
 
 export interface MenuGroup {
     groupLabel: string;
@@ -145,11 +161,11 @@ export interface MenuGroup {
 
 export type MenuItem = MenuGroup | MenuOption;
 
-interface ListOption extends MenuOption {
+type ListOption = MenuOption & {
     focusIndex: number,
     options?: ListItem[]; // eslint-disable-line @typescript-eslint/no-use-before-define
     ref: RefObject<HTMLButtonElement>,
-}
+};
 
 interface ListGroup extends MenuGroup {
     groupOptions: ListOption[];
@@ -230,6 +246,7 @@ export const Menu = forwardRef(({
     const device = useDeviceContext();
     const list: ListItem[] = useMemo((): ListItem[] => getListItems(options), [options]);
     const [focusedIndex, setFocusedIndex] = useState(0);
+    const [openTooltipIndex, setOpenTooltipIndex] = useState(0);
     const [activeMenuList, setActiveMenuList] = useState(list);
     const [isMouseNavigating, setMouseNavigating] = useState(false);
     const [, setFocusedElement] = useState<HTMLButtonElement | null>(null);
@@ -361,34 +378,57 @@ export const Menu = forwardRef(({
     function renderItems(listItems: ListItem[]): ReactElement {
         const isSubMenu = listItems !== list;
         const getTestId = (index: number): string => (isSubMenu ? `sub-menu-option-${index}` : `menu-option-${index}`);
+        const topLevelOptions = getAllOptionsInLevel(list);
+        const updateOpenTooltipIndex = (opt: ListOption): void => {
+            if (topLevelOptions.includes(opt)) {
+                setOpenTooltipIndex(opt.focusIndex);
+            }
+        };
         const hasAnyOptionWithIcon = listItems.some((opt) => !isListGroup(opt) && opt.iconName != null);
+
+        const renderButton = (opt: ListOption, index: number): ReactElement => (
+            <Button
+                aria-haspopup={opt.options ? 'menu' : undefined}
+                aria-expanded={opt.options ? activeMenuList === opt.options : undefined}
+                data-testid={getTestId(index)}
+                $device={device}
+                $hasSubMenu={!!opt.options}
+                type="button"
+                role="menuitem"
+                tabIndex={-1}
+                disabled={opt.disabled}
+                onClick={() => handleOptionClick(opt)}
+                onMouseEnter={() => handleMouseEnter(opt)}
+                onMouseLeave={() => handleMouseLeave(opt)}
+                ref={opt.ref}
+                $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
+            >
+                {opt.iconName && (
+                    <StyledIcon name={opt.iconName} size="1rem" />
+                )}
+                <Label>{opt.label}</Label>
+                {opt.options && <Icon name="chevronRight" size="1rem" />}
+            </Button>
+        );
 
         return (
             <>
                 {listItems.map((opt, index) => (isListGroup(opt) ? renderGroup(opt, index) : (
                     <Fragment key={`${menuId}-${opt.label}`}>
-                        <Button
-                            aria-haspopup={opt.options ? 'menu' : undefined}
-                            aria-expanded={opt.options ? activeMenuList === opt.options : undefined}
-                            data-testid={getTestId(index)}
-                            $device={device}
-                            $hasSubMenu={!!opt.options}
-                            type="button"
-                            role="menuitem"
-                            tabIndex={-1}
-                            disabled={opt.disabled}
-                            onClick={() => handleOptionClick(opt)}
-                            onMouseEnter={() => handleMouseEnter(opt)}
-                            onMouseLeave={() => handleMouseLeave(opt)}
-                            ref={opt.ref}
-                            $withEmptyIcon={hasAnyOptionWithIcon && !opt.iconName}
-                        >
-                            {opt.iconName && (
-                                <StyledIcon name={opt.iconName} size="1rem" />
-                            )}
-                            <Label>{opt.label}</Label>
-                            {opt.options && <Icon name="chevronRight" size="1rem" />}
-                        </Button>
+                        {opt.tooltip ? (
+                            <div role="none" onMouseEnter={() => updateOpenTooltipIndex(opt)}>
+                                <MenuItemTooltip
+                                    // eslint-disable-next-line react/jsx-props-no-spreading
+                                    {...opt.tooltip}
+                                    open={topLevelOptions.includes(opt)
+                                        ? opt.focusIndex === openTooltipIndex
+                                        : undefined}
+                                    strategy="fixed"
+                                >
+                                    {renderButton(opt, index)}
+                                </MenuItemTooltip>
+                            </div>
+                        ) : renderButton(opt, index)}
                         {opt.options && isSubMenuOpen(opt) && (
                             <SubMenu
                                 data-testid={`menu-option-${index}-sub-menu`}

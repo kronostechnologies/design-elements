@@ -192,6 +192,8 @@ export interface TooltipProps {
     confirmationLabel?: string;
     /** Set tooltip open by default */
     defaultOpen?: boolean;
+    /** Opens or closes the tooltip whenever the value changes. Hover and focus still work in between. */
+    open?: boolean;
     /**
      * Tooltip placement on desktop (always top on mobile)
      * @default right
@@ -204,6 +206,11 @@ export interface TooltipProps {
     /** Tooltip text content */
     label: string;
     mode?: TooltipMode;
+    /**
+     * Positioning strategy
+     * @default 'absolute'
+     */
+    strategy?: 'absolute' | 'fixed';
 }
 
 const modifiers: PopperOptions['modifiers'] = [
@@ -226,13 +233,14 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     invertedIcon = false,
     label,
     mode = 'normal',
+    open,
     confirmationLabel,
+    strategy = 'absolute',
 }) => {
     const { isMobile } = useDeviceContext();
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
-    const [isVisible, setIsVisible] = useState(defaultOpen);
     const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
     const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -250,19 +258,24 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         return 'hover';
     }, [disabled, isMobile]);
 
+    const handleVisibleChange = useCallback((visible: boolean): void => {
+        setControlledTooltipOpen(visible);
+    }, []);
+
     const popperTooltip = usePopperTooltip({
-        defaultVisible: defaultOpen,
         placement: isMobile ? 'top' : desktopPlacement,
-        onVisibleChange: setIsVisible,
+        onVisibleChange: handleVisibleChange,
         trigger: getTooltipTriggerType(),
         visible: disabled ? false : controlledTooltipOpen,
         delayShow: delayed ? titleDelay : undefined,
-    }, { modifiers });
+    }, { modifiers, strategy });
 
     if (prevLabel.current !== currentLabel) {
         prevLabel.current = currentLabel;
         popperTooltip?.update?.();
     }
+
+    const isVisible = popperTooltip.visible;
 
     const openTooltip = useCallback((): void => {
         if (delayed && !disabled) {
@@ -306,6 +319,22 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
             setControlledTooltipOpen(undefined);
         }
     }, [isMobile]);
+
+    useEffect(() => {
+        if (defaultOpen && open === undefined) {
+            openTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        if (open === true) {
+            openTooltip();
+        } else if (open === false) {
+            closeTooltip();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [open]);
 
     const handleBLur = useCallback((): void => {
         if (!isMobile) {
