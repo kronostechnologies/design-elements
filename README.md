@@ -21,14 +21,22 @@ To contribute to Design Elements or implement its components in your app, you wi
 
 ### Quick start
 
+**Prerequisites**:
+- Node.js `24.21.0` (see `.tool-versions`, used by [asdf](https://asdf-vm.com/))
+
 **Note to Windows users**: If you have `make` installed, you can run it with `make -f Makefile` instead of `make`. If it doesn't work, your best bet is to look at the Makefile and run the commands separately
 
-All the packages are linked together using yarn 2.
+All the packages are linked together using Yarn Berry.
+
+```bash
+# Install dependencies for all workspaces (run once, and again after pulling changes to yarn.lock)
+yarn
+```
 
 ```bash
 # Running stuff for dev, usually 1 per terminal. Watches files and rebuilds as needed.
-make react
-make storybook
+make react      # Builds packages/react in watch mode
+make storybook  # Starts the Storybook dev server at http://localhost:6006
 ```
 
 ```bash
@@ -40,16 +48,7 @@ make build_storybook
 ## Contribution Guidelines
 Design Elements is an Equisoft inner source project. As such, we welcome and encourage contributions to it from both product and service teams.
 
-### Types of contribution we welcome
-Here are the ways you are invited to contribute:
-- **Developing a new component**
-- **Adding features to an existing component**
-- **Bug fixing**
-
-### Templates
-We use issue and pull request templates to standardize the contribution process and improve communication in the repo.
-
-When reporting a bug, requesting a feature or submitting a pull request, **please take the time to fill all relevant fields**.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full guide: architecture background, the per-change checklist, and, since this package is consumed by multiple products, how to identify and flag breaking changes (props and major visual changes). For development setup, see the [Quick start](#quick-start) section above.
 
 ## About the Team
 This project is designed, coded and maintained by the interdisciplinary [Product Design Team](https://confluence.equisoft.com/display/PRODUCTDESIGN) based in Equisoft's Quebec City and Montreal offices.
