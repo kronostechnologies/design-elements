@@ -1860,7 +1860,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     expect: "npm:30.5.2"
-    i18next: "npm:26.4.4"
+    i18next: "npm:26.5.2"
     jest: "npm:30.5.2"
     jest-environment-jsdom: "npm:30.5.2"
     jest-extended: "npm:7.0.0"
@@ -1951,7 +1951,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     eslint-plugin-storybook: "npm:0.12.0"
-    i18next: "npm:26.4.4"
+    i18next: "npm:26.5.2"
     i18next-browser-languagedetector: "npm:8.2.1"
     lucide-react: "npm:1.59.0"
     react: "npm:18.3.1"
@@ -8043,7 +8043,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     html-webpack-plugin: "npm:5.6.8"
-    i18next: "npm:26.4.4"
+    i18next: "npm:26.5.2"
     i18next-browser-languagedetector: "npm:8.2.1"
     postcss: "npm:8.5.31"
     postcss-styled-syntax: "npm:0.7.4"
@@ -8052,7 +8052,7 @@ __metadata:
     pretty-format: "npm:30.5.1"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
-    react-i18next: "npm:17.0.16"
+    react-i18next: "npm:17.1.0"
     react-is: "npm:18.3.1"
     react-router: "npm:6.30.4"
     react-router-dom: "npm:6.30.6"
@@ -9834,15 +9834,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:26.4.4":
-  version: 26.4.4
-  resolution: "i18next@npm:26.4.4"
+"i18next@npm:26.5.2":
+  version: 26.5.2
+  resolution: "i18next@npm:26.5.2"
   peerDependencies:
     typescript: ^5 || ^6 || ^7
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/7d94bb6cea2bdbf293547565d565b12fb0f2a24f462f06f6cc1cd08367f14cc36bd488c7abb01d2b9b827bd46e7d4b0713b44543f7ed0c43f32d1371f85dd305
+  checksum: 10c0/b2edaba4af8f907d685bb133b8878cc1f03a7eaac3e76937da736b819d6d9500a82f516441b272994e9988c227bbcbbbc38fd185b4a2f67ab6bf9884ecf31167
   languageName: node
   linkType: hard
 
@@ -12889,9 +12889,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:17.0.16":
-  version: 17.0.16
-  resolution: "react-i18next@npm:17.0.16"
+"react-i18next@npm:17.1.0":
+  version: 17.1.0
+  resolution: "react-i18next@npm:17.1.0"
   dependencies:
     "@babel/runtime": "npm:^7.29.7"
     html-parse-stringify: "npm:^4.0.1"
@@ -12907,7 +12907,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/4e5e1b6a79228532fb51140fbbb26d019fe48d0d600213b81ece5d66c4d3b99b94cf97c54cd6c49bb4af6ff8504baa8327397f9ddf264455ad3fa6ea114cffa2
+  checksum: 10c0/5ba9de18304f8fc20511de9f64f2a71594cb607c55b06692463867721f256770ae71489639bd96554bc556b5b310d495cff526ebbbaac091f9bae0ca8f547f24
   languageName: node
   linkType: hard
 
