@@ -10,6 +10,10 @@ build_react: yarn
 react: yarn
 	cd packages/react; yarn start;
 
+.PHONY: build_storybook
+build_storybook: yarn
+	cd packages/storybook; yarn build;
+
 .PHONY: storybook
 storybook: yarn
 	cd packages/storybook; yarn start;
