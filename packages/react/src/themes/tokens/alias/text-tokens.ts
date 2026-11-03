@@ -100,6 +100,7 @@ export const defaultTextAliasTokens: AliasTokenMap<TextAliasToken> = {
     'text-body-small-font-size': 'font-size-300',
     'text-body-small-line-height': 'line-height-400',
     'text-body-medium-font-size': 'font-size-350',
+    'text-body-medium-font-size:mobile': 'font-size-400',
     'text-body-medium-line-height': 'line-height-500',
     'text-body-large-font-size': 'font-size-400',
     'text-body-large-line-height': 'line-height-600',
