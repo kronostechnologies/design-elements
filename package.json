@@ -19,7 +19,7 @@
     "postcss": "8.5.31",
     "postcss-styled-syntax": "0.7.4",
     "stylelint": "17.16.0",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "xmlbuilder": "15.1.1",
     "yargs": "18.2.0"
   },
