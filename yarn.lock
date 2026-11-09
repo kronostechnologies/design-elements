@@ -1855,7 +1855,7 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     expect: "npm:30.5.2"
-    i18next: "npm:26.5.11"
+    i18next: "npm:26.7.1"
     jest: "npm:30.5.2"
     jest-environment-jsdom: "npm:30.5.2"
     jest-extended: "npm:7.0.0"
@@ -1946,8 +1946,8 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     eslint-plugin-storybook: "npm:0.12.0"
-    i18next: "npm:26.5.11"
-    i18next-browser-languagedetector: "npm:8.2.3"
+    i18next: "npm:26.7.1"
+    i18next-browser-languagedetector: "npm:8.3.0"
     lucide-react: "npm:1.61.0"
     react: "npm:18.3.1"
     react-docgen-typescript: "npm:2.4.0"
@@ -7988,8 +7988,8 @@ __metadata:
     eslint-plugin-react: "npm:7.37.5"
     eslint-plugin-react-hooks: "npm:7.1.1"
     html-webpack-plugin: "npm:5.6.8"
-    i18next: "npm:26.5.11"
-    i18next-browser-languagedetector: "npm:8.2.3"
+    i18next: "npm:26.7.1"
+    i18next-browser-languagedetector: "npm:8.3.0"
     postcss: "npm:8.5.31"
     postcss-styled-syntax: "npm:0.7.4"
     posthtml: "npm:0.16.7"
@@ -9770,24 +9770,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:8.2.3":
-  version: 8.2.3
-  resolution: "i18next-browser-languagedetector@npm:8.2.3"
+"i18next-browser-languagedetector@npm:8.3.0":
+  version: 8.3.0
+  resolution: "i18next-browser-languagedetector@npm:8.3.0"
   dependencies:
     "@babel/runtime": "npm:^7.29.2"
-  checksum: 10c0/f3af9c54a586f95bda29565c07ad660503efe7df59eb1e751a93ee675dac8b06d36788e8b142dd176ba53621107521b24e8905a6732f72b8e3140140efb10d7e
+  checksum: 10c0/34ec0e1a56fbcdaa1879e8ac0f11567d37edc3d1d45b3b562ac90c5eca774ff8bf59d4009257e37cd5adbd95434b07af6bfa24ea1efeb793c055e84af863c021
   languageName: node
   linkType: hard
 
-"i18next@npm:26.5.11":
-  version: 26.5.11
-  resolution: "i18next@npm:26.5.11"
+"i18next@npm:26.7.1":
+  version: 26.7.1
+  resolution: "i18next@npm:26.7.1"
   peerDependencies:
     typescript: ^5 || ^6 || ^7
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/b2ecb58a38420530d928d93761efc1d4e966f24cf99518df843f5b8797be135d7b6defb01ca97b61bf2bc614a6fab56bd874032b42567ae22cfa84909c2187cd
+  checksum: 10c0/742c0d5ea25a68e0380de3be5c4b7d1f2a9ab9da81d5f2a85ea2892a500f60ba1a87a2c1fd6e0cd16588f37175dc88da817d3b26dda1963044f045bd86202960
   languageName: node
   linkType: hard
 
