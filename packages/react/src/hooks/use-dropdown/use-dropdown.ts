@@ -2,10 +2,6 @@ import {
     autoUpdate,
     type Dimensions,
     flip,
-    type FlipOptions,
-    getOverflowAncestors,
-    hide,
-    type Middleware,
     type MiddlewareState,
     offset,
     type Placement,
@@ -14,7 +10,7 @@ import {
     useFloating,
     type UseFloatingOptions,
 } from '@floating-ui/react-dom';
-import { type MutableRefObject, useMemo } from 'react';
+import { type MutableRefObject, useEffect, useMemo } from 'react';
 import {
     type BoxShadow,
     findMaxBottomBoxShadow,
@@ -78,43 +74,25 @@ function computeOffset(element: HTMLElement, placement: Placement): number {
         : SPACING + Math.max(findMaxBottomBoxShadow(boxShadows), outlineSpace);
 }
 
-// The dropdown is portalled out of its reference's scroll container, so that container does not clip it:
-// once the reference has scrolled out of view, the dropdown would otherwise float over what lies outside
-// the container (e.g. a fixed app header). `hide` reports an empty reference rect as clipped, and every rect
-// is empty where nothing is laid out (jsdom), so only a reference with a size hides the dropdown.
-const hideWhenReferenceHidden: Middleware = {
-    name: 'hideWhenReferenceHidden',
-    fn({ elements, middlewareData, rects }) {
-        const hasSize = rects.reference.width > 0 || rects.reference.height > 0;
-        Object.assign(elements.floating.style, {
-            visibility: middlewareData.hide?.referenceHidden && hasSize ? 'hidden' : '',
+// The dropdown is portalled, so the reference's scroll container does not clip it: once that container has
+// scrolled the reference out of view, the dropdown would float over what lies outside it (e.g. a fixed header).
+function useHideWhenReferenceHidden(
+    open: boolean,
+    reference: ReferenceType | null,
+    floating: HTMLElement | null,
+): void {
+    useEffect(() => {
+        if (!open || !(reference instanceof Element) || !floating || typeof IntersectionObserver === 'undefined') {
+            return undefined;
+        }
+
+        const observer = new IntersectionObserver(([entry]) => {
+            Object.assign(floating.style, { visibility: entry.isIntersecting ? '' : 'hidden' });
         });
-        return {};
-    },
-};
+        observer.observe(reference);
 
-function isVerticalScrollContainer(ancestor: Element): boolean {
-    return /auto|scroll|overlay/.test(window.getComputedStyle(ancestor).overflowY)
-        && ancestor.scrollHeight > ancestor.clientHeight;
-}
-
-// Flipping within the viewport lets a dropdown opened above its reference cover what lies above the reference's
-// scroll container (e.g. a fixed app header), so it flips within that container instead. Containers that do
-// not scroll are left out: one with `overflow: auto` but nothing to scroll (e.g. a short section) would leave
-// room on neither side and keep the dropdown below the reference, past the bottom of the viewport.
-function getFlipOptions({ elements }: MiddlewareState): FlipOptions {
-    const scrollContainers = elements.reference instanceof Element
-        ? getOverflowAncestors(elements.reference)
-            .filter((ancestor): ancestor is Element => ancestor instanceof Element)
-            .filter(isVerticalScrollContainer)
-        : [];
-
-    if (scrollContainers.length === 0) {
-        return { fallbackStrategy: 'initialPlacement' };
-    }
-
-    // Cross-axis overflow would make every placement overflow a container narrower than the dropdown.
-    return { boundary: scrollContainers, crossAxis: false, fallbackStrategy: 'initialPlacement' };
+        return () => observer.disconnect();
+    }, [open, reference, floating]);
 }
 
 export function useDropdown<T extends ReferenceType>({
@@ -127,9 +105,10 @@ export function useDropdown<T extends ReferenceType>({
         y,
         update,
         refs,
+        elements: { reference, floating },
     } = useFloating<T>({
         middleware: [
-            flip(getFlipOptions),
+            flip({ fallbackStrategy: 'initialPlacement' }),
             size({
                 apply({ rects, elements }) {
                     Object.assign(elements.floating.style, {
@@ -141,8 +120,6 @@ export function useDropdown<T extends ReferenceType>({
                 const element = state.elements.reference as HTMLElement;
                 return computeOffset(element, state.placement);
             }),
-            hide(),
-            hideWhenReferenceHidden,
         ],
         open,
         placement,
@@ -150,6 +127,8 @@ export function useDropdown<T extends ReferenceType>({
         transform: false,
         whileElementsMounted: autoUpdate,
     });
+
+    useHideWhenReferenceHidden(open, reference, floating);
 
     return useMemo(() => (<UseDropdownResponse<T>>{
         x,
