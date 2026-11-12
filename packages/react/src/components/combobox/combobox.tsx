@@ -537,7 +537,7 @@ export const Combobox: FC<ComboboxProps> = ({
             const newValue: string | undefined = newOption?.value;
             const existingOption: ListboxOption | undefined = findOptionsByValue(options, newValue)[0];
             const isNotAlreadySelectedOption = existingOption !== undefined && selectedOption?.value !== newValue;
-            if (allowCustomValue || newOption === undefined || isNotAlreadySelectedOption) {
+            if (allowCustomValue || !newValue || isNotAlreadySelectedOption) {
                 onChange?.(newValue || '');
             }
         }

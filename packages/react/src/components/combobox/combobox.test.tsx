@@ -708,6 +708,24 @@ describe('Combobox', () => {
             },
         );
 
+        it('callback is fired with an empty value when the input is cleared', async () => {
+            const onChange = jest.fn();
+            renderWithProviders(<Combobox options={provinces} onChange={onChange} defaultValue="Quebec" />);
+
+            await userEvent.clear(screen.getByTestId('textbox'));
+
+            expect(onChange).toHaveBeenCalledWith('');
+        });
+
+        it('callback is not fired when a character is deleted and the input is not empty', async () => {
+            const onChange = jest.fn();
+            renderWithProviders(<Combobox options={provinces} onChange={onChange} defaultValue="Quebec" />);
+
+            await userEvent.type(screen.getByTestId('textbox'), '{backspace}');
+
+            expect(onChange).not.toHaveBeenCalled();
+        });
+
         it('callback does not receive the suggestion when fired', async () => {
             const onChange = jest.fn();
             const onInputChange = jest.fn();
