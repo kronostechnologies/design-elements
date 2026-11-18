@@ -87,6 +87,20 @@ describe('MenuButton', () => {
         expect(screen.getByTestId('menu')).toBeInTheDocument();
     });
 
+    it('should display six and a half options by default', () => {
+        const manyOptions = Array.from({ length: 7 }, (_, index) => ({
+            label: `Option ${index + 1}`,
+        }));
+
+        renderWithProviders(
+            <MenuButton buttonType="primary" defaultOpen options={manyOptions}>
+                Test
+            </MenuButton>,
+        );
+
+        expect(screen.getByTestId('menu')).toHaveStyle({ maxHeight: '208px' });
+    });
+
     it('should close menu when escape key is pressed inside menu', async () => {
         renderWithProviders(
             <MenuButton buttonType="primary" defaultOpen options={options}>

@@ -219,7 +219,7 @@ function getSubMenuPosition(parentOption: ListOption): { top: number, left: numb
 export const Menu = forwardRef(({
     className,
     id,
-    numberOfVisibleItems = 4,
+    numberOfVisibleItems = 6.5,
     options,
     onKeyDown,
     onOptionSelect,
