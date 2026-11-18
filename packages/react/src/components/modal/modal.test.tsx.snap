@@ -396,6 +396,7 @@ exports[`Modal Matches snapshot (noPadding) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >
@@ -615,6 +616,7 @@ exports[`Modal Matches snapshot (opened, desktop) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >
@@ -833,6 +835,7 @@ exports[`Modal Matches snapshot (opened, mobile) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >

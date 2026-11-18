@@ -497,6 +497,7 @@ exports[`BentoMenuButton Matches Snapshot (productGroups and externalLinks) 1`] 
           aria-controls="eds-uuid1"
           aria-expanded="true"
           class="c1 c2 eds-DropdownMenuButton-button"
+          data-icon-button=""
           data-testid="menu-button"
           type="button"
         >
@@ -1436,6 +1437,7 @@ exports[`BentoMenuButton Matches Snapshot (productLinks and externalLinks) 1`] =
           aria-controls="eds-uuid1"
           aria-expanded="true"
           class="c1 c2 eds-DropdownMenuButton-button"
+          data-icon-button=""
           data-testid="menu-button"
           type="button"
         >
@@ -1889,6 +1891,7 @@ exports[`BentoMenuButton Matches Snapshot (tag="nav") 1`] = `
     aria-controls="eds-uuid1"
     aria-expanded="false"
     class="c1 c2 eds-DropdownMenuButton-button"
+    data-icon-button=""
     data-testid="menu-button"
     type="button"
   >

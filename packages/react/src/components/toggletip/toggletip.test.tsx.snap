@@ -87,6 +87,7 @@ exports[`Toggletip has default desktop styles (defaultOpen) 1`] = `
     aria-expanded="true"
     aria-label="info"
     class="c0 c1"
+    data-icon-button=""
     data-testid="toggletip"
     type="button"
   >
@@ -361,6 +362,7 @@ exports[`Toggletip has default desktop styles 1`] = `
     aria-expanded="false"
     aria-label="info"
     class="c0 c1"
+    data-icon-button=""
     data-testid="toggletip"
     type="button"
   >
@@ -481,6 +483,7 @@ exports[`Toggletip has mobile styles (defaultOpen) 1`] = `
     aria-expanded="true"
     aria-label="info"
     class="c0 c1"
+    data-icon-button=""
     data-testid="toggletip"
     type="button"
   >
@@ -755,6 +758,7 @@ exports[`Toggletip has mobile styles 1`] = `
     aria-expanded="false"
     aria-label="info"
     class="c0 c1"
+    data-icon-button=""
     data-testid="toggletip"
     type="button"
   >

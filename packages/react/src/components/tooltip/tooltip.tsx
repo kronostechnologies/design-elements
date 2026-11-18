@@ -1,8 +1,10 @@
 import {
     cloneElement,
+    FocusEvent,
     FunctionComponent,
     isValidElement,
     KeyboardEvent as ReactKeyboardEvent,
+    MouseEvent,
     PropsWithChildren,
     ReactElement,
     ReactNode,
@@ -216,6 +218,10 @@ const modifiers: PopperOptions['modifiers'] = [
 ];
 const titleDelay = 250;
 
+function isIconButtonTarget(target: EventTarget): boolean {
+    return target instanceof Element && target.closest('[data-icon-button]') !== null;
+}
+
 export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     children,
     className,
@@ -229,6 +235,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     confirmationLabel,
 }) => {
     const { isMobile } = useDeviceContext();
+    const isNormalDesktop = !isMobile && mode === 'normal';
     const Theme = useTheme();
     const tooltipId = useMemo(uuid, []);
     const tooltipTriggerId = useMemo(() => `tooltip-trigger-${tooltipId}`, [tooltipId]);
@@ -313,15 +320,18 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [isMobile, closeTooltip]);
 
-    const handleOnClick = useCallback(() => {
+    const handleOnClick = useCallback((event: MouseEvent<HTMLSpanElement>): void => {
         setIsClicked(true);
-    }, [setIsClicked]);
+        if (isNormalDesktop && isIconButtonTarget(event.target)) {
+            closeTooltip();
+        }
+    }, [closeTooltip, isNormalDesktop]);
 
-    const handleFocus = useCallback((): void => {
-        if (!isMobile) {
+    const handleFocus = useCallback((event: FocusEvent<HTMLSpanElement>): void => {
+        if (!isMobile && !(isNormalDesktop && isIconButtonTarget(event.target))) {
             openTooltip();
         }
-    }, [isMobile, openTooltip]);
+    }, [isMobile, isNormalDesktop, openTooltip]);
 
     const handleMouseEnter = useCallback((): void => {
         if (!isMobile) {

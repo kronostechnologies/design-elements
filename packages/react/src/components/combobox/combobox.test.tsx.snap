@@ -255,6 +255,7 @@ input + .c2 {
         aria-disabled="true"
         aria-label="Show Select an option options"
         class="c8 c9 c10"
+        data-icon-button=""
         data-testid="arrow"
         tabindex="-1"
         type="button"
@@ -593,6 +594,7 @@ input + .c2 {
       <button
         aria-label="Show Select an option options"
         class="c10 c11 c12"
+        data-icon-button=""
         data-testid="arrow"
         tabindex="-1"
         type="button"
@@ -847,6 +849,7 @@ exports[`Combobox matches the snapshot (mobile) 1`] = `
       <button
         aria-label="Show  options"
         class="c6 c7 c8"
+        data-icon-button=""
         data-testid="arrow"
         tabindex="-1"
         type="button"
@@ -1142,6 +1145,7 @@ input + .c2 {
     <button
       aria-label="Show Select options options"
       class="c9 c10 c11"
+      data-icon-button=""
       data-testid="arrow"
       tabindex="-1"
       type="button"
@@ -1439,6 +1443,7 @@ input + .c2 {
       <button
         aria-label="Show Select an option options"
         class="c9 c10 c11"
+        data-icon-button=""
         data-testid="arrow"
         tabindex="-1"
         type="button"
@@ -1738,6 +1743,7 @@ input + .c2 {
       <button
         aria-label="Show Select an option options"
         class="c9 c10 c11"
+        data-icon-button=""
         data-testid="arrow"
         tabindex="-1"
         type="button"

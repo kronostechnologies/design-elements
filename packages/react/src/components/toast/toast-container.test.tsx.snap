@@ -197,6 +197,7 @@ exports[`ToastContainer should match snapshot (alert) 1`] = `
     <button
       aria-label="Dismiss notification"
       class="c3 c4 c5"
+      data-icon-button=""
       data-testid="dismiss"
       type="button"
     >
@@ -423,6 +424,7 @@ exports[`ToastContainer should match snapshot (discovery) 1`] = `
     <button
       aria-label="Dismiss notification"
       class="c3 c4 c5"
+      data-icon-button=""
       data-testid="dismiss"
       type="button"
     >
@@ -651,6 +653,7 @@ exports[`ToastContainer should match snapshot (neutral) 1`] = `
     <button
       aria-label="Dismiss notification"
       class="c3 c4 c5"
+      data-icon-button=""
       data-testid="dismiss"
       type="button"
     >
@@ -871,6 +874,7 @@ exports[`ToastContainer should match snapshot (success) 1`] = `
     <button
       aria-label="Dismiss notification"
       class="c3 c4 c5"
+      data-icon-button=""
       data-testid="dismiss"
       type="button"
     >
@@ -1097,6 +1101,7 @@ exports[`ToastContainer should match snapshot (warning) 1`] = `
     <button
       aria-label="Dismiss notification"
       class="c3 c4 c5"
+      data-icon-button=""
       data-testid="dismiss"
       type="button"
     >

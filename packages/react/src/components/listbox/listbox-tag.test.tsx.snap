@@ -168,6 +168,7 @@ exports[`ListboxTag matches the snapshot 1`] = `
   <button
     aria-label="Remove tag Test Label"
     class="c5 c6 c7"
+    data-icon-button=""
     data-testid="Test Label-remove-button"
     type="button"
   >

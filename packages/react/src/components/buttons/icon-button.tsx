@@ -79,6 +79,7 @@ export const IconButton = forwardRef(({
             onKeyDown={onKeyDown}
             size={size}
             {...props /* eslint-disable-line react/jsx-props-no-spreading */}
+            data-icon-button=""
         >
             { children || (
                 <Icon

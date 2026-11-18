@@ -3210,6 +3210,7 @@ label + .c3 {
                         <button
                           aria-label="Go to previous month"
                           class="c7 c8 c9"
+                          data-icon-button=""
                           data-testid="month-previous"
                           type="button"
                         >
@@ -3345,6 +3346,7 @@ label + .c3 {
                           aria-disabled="true"
                           aria-label="Go to next month"
                           class="c7 c8 c9"
+                          data-icon-button=""
                           data-testid="month-next"
                           type="button"
                         >
@@ -4656,6 +4658,7 @@ label + .c3 {
                         <button
                           aria-label="Go to previous month"
                           class="c7 c8 c9"
+                          data-icon-button=""
                           data-testid="month-previous"
                           type="button"
                         >
@@ -4791,6 +4794,7 @@ label + .c3 {
                           aria-disabled="true"
                           aria-label="Go to next month"
                           class="c7 c8 c9"
+                          data-icon-button=""
                           data-testid="month-next"
                           type="button"
                         >
@@ -6076,6 +6080,7 @@ label + .c3 {
                         <button
                           aria-label="Go to previous month"
                           class="c7 c8 c9"
+                          data-icon-button=""
                           data-testid="month-previous"
                           type="button"
                         >
@@ -6211,6 +6216,7 @@ label + .c3 {
                           aria-disabled="true"
                           aria-label="Go to next month"
                           class="c7 c8 c9"
+                          data-icon-button=""
                           data-testid="month-next"
                           type="button"
                         >

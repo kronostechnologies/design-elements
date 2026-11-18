@@ -255,6 +255,7 @@ exports[`ModalDialog matches snapshot (custom button labels) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >
@@ -526,6 +527,7 @@ exports[`ModalDialog matches snapshot (custom footer content) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >
@@ -800,6 +802,7 @@ exports[`ModalDialog matches snapshot (only subtitle) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >
@@ -1094,6 +1097,7 @@ exports[`ModalDialog matches snapshot (opened, desktop) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >
@@ -1387,6 +1391,7 @@ exports[`ModalDialog matches snapshot (opened, mobile) 1`] = `
         <button
           aria-label="Close dialog"
           class="c2 c3 c4"
+          data-icon-button=""
           data-testid="close-button"
           type="button"
         >

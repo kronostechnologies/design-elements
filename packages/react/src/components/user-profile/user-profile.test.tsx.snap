@@ -1388,6 +1388,7 @@ exports[`UserProfile matches Snapshot (mobile) 1`] = `
       <button
         aria-expanded="true"
         class="c2 c3 eds-DropdownMenuButton-button"
+        data-icon-button=""
         data-testid="menu-button"
         type="button"
       >
@@ -2430,6 +2431,7 @@ exports[`UserProfile matches Snapshot (variant=\`avatar-only\`) 1`] = `
   <button
     aria-expanded="false"
     class="c1 c2 eds-DropdownMenuButton-button"
+    data-icon-button=""
     data-testid="menu-button"
     type="button"
   >

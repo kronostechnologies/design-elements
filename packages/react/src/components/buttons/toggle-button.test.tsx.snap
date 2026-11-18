@@ -371,6 +371,7 @@ exports[`ToggleButton has icon only style 1`] = `
   aria-label="Lock"
   aria-pressed="false"
   class="c0 c1 c2"
+  data-icon-button=""
   type="button"
 >
   <svg
@@ -803,6 +804,7 @@ exports[`ToggleButton has pressed icon only style 1`] = `
   aria-label="Lock"
   aria-pressed="true"
   class="c0 c1 c2"
+  data-icon-button=""
   type="button"
 >
   <svg

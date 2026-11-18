@@ -207,6 +207,7 @@ exports[`Carousel should match snapshot 1`] = `
     aria-disabled="true"
     aria-label="previous"
     class="c1 c2 c3"
+    data-icon-button=""
     data-testid="carousel-previous"
     type="button"
   >
@@ -364,6 +365,7 @@ exports[`Carousel should match snapshot 1`] = `
     aria-controls="uuid1"
     aria-label="next"
     class="c1 c2 c11"
+    data-icon-button=""
     data-testid="carousel-next"
     type="button"
   >
