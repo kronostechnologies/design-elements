@@ -106,7 +106,7 @@ describe('Tooltip', () => {
             expect(tooltip).toBeVisible();
         });
 
-        it('does not open when tabbing to an icon button or prevent keyboard activation', async () => {
+        it('opens when tabbing to an icon button and preserves keyboard activation', async () => {
             const user = userEvent.setup();
             const onClick = jest.fn();
             renderWithProviders(
@@ -121,7 +121,7 @@ describe('Tooltip', () => {
             await user.tab();
 
             expect(trigger).toHaveFocus();
-            expect(tooltip).not.toBeVisible();
+            expect(tooltip).toBeVisible();
 
             await user.keyboard('{Enter}');
 

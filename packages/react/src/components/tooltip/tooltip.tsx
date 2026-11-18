@@ -243,6 +243,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | undefined>();
     const [controlledTooltipOpen, setControlledTooltipOpen] = useState<boolean>();
     const [isClicked, setIsClicked] = useState<boolean>(false);
+    const isTabNavigation = useRef(false);
     const currentLabel = isClicked ? (confirmationLabel ?? label) : label;
     const tooltipVariant = (mode === 'confirm' && isClicked) ? 'success' : 'normal';
     const prevLabel = useRef(currentLabel);
@@ -288,6 +289,7 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [delayed, tooltipTimeout, setControlledTooltipOpen]);
 
     const handleKeyDown = useCallback((event: ReactKeyboardEvent<HTMLSpanElement> | KeyboardEvent): void => {
+        isTabNavigation.current = event.key === 'Tab';
         if (event.key === 'Escape' && !isMobile) {
             if (isVisible) {
                 document.getElementById(tooltipTriggerId)?.click();
@@ -296,11 +298,25 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         }
     }, [closeTooltip, isMobile, isVisible, tooltipTriggerId]);
 
+    const handleFocusIn = useCallback((): void => {
+        isTabNavigation.current = false;
+    }, []);
+
+    const handlePointerDown = useCallback((): void => {
+        isTabNavigation.current = false;
+    }, []);
+
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('focusin', handleFocusIn);
+        window.addEventListener('pointerdown', handlePointerDown);
 
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [handleKeyDown]);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('focusin', handleFocusIn);
+            window.removeEventListener('pointerdown', handlePointerDown);
+        };
+    }, [handleFocusIn, handleKeyDown, handlePointerDown]);
 
     useEffect(() => {
         if (disabled) {
@@ -328,7 +344,10 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
     }, [closeTooltip, isNormalDesktop]);
 
     const handleFocus = useCallback((event: FocusEvent<HTMLSpanElement>): void => {
-        if (!isMobile && !(isNormalDesktop && isIconButtonTarget(event.target))) {
+        if (
+            !isMobile
+            && !(isNormalDesktop && isIconButtonTarget(event.target) && !isTabNavigation.current)
+        ) {
             openTooltip();
         }
     }, [isMobile, isNormalDesktop, openTooltip]);

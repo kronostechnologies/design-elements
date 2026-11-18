@@ -14,7 +14,9 @@ import * as TooltipStories  from './tooltip.stories';
 
 ## Definition
 A tooltip provides extra information to the user. It becomes visible when a focusable element is hovered over or when it enters its focused state [1].
-On desktop, a default tooltip on an `IconButton` opens on hover, not focus, and closes when the button is activated.
+On desktop, a default tooltip on an `IconButton` opens on hover and when focused with Tab,
+and closes when the button is activated. It does not reopen when a dialog restores focus
+to the button.
 <Canvas of={TooltipStories.Default} />
 
 ## Usage
