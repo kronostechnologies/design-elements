@@ -1,0 +1,29 @@
+diff --git a/lib/components/ModalPortal.js b/lib/components/ModalPortal.js
+index 07e27aafea5c094055c101ce79510e9559560fbe..696c2f7f8b249787e480ce5af2da3b6b3353c863 100644
+--- a/lib/components/ModalPortal.js
++++ b/lib/components/ModalPortal.js
+@@ -118,10 +118,10 @@ var ModalPortal = function (_Component) {
+       if (_this.props.shouldFocusAfterRender) {
+         if (_this.props.shouldReturnFocusAfterClose) {
+           focusManager.returnFocus(_this.props.preventScroll);
+-          focusManager.teardownScopedFocus();
+         } else {
+           focusManager.popWithoutFocus();
+         }
++        focusManager.teardownScopedFocus();
+       }
+ 
+       if (_this.props.onAfterClose) {
+diff --git a/lib/helpers/focusManager.js b/lib/helpers/focusManager.js
+index 9d164a371b1d8ab1e05b566565126ab74573767a..825e98f5dfbb73e412480c33a806f5925bf646e4 100644
+--- a/lib/helpers/focusManager.js
++++ b/lib/helpers/focusManager.js
+@@ -109,7 +109,7 @@ function teardownScopedFocus() {
+ 
+   if (window.addEventListener) {
+     window.removeEventListener("blur", handleBlur);
+-    document.removeEventListener("focus", handleFocus);
++    document.removeEventListener("focus", handleFocus, true);
+   } else {
+     window.detachEvent("onBlur", handleBlur);
+     document.detachEvent("onFocus", handleFocus);
