@@ -1,5 +1,6 @@
 import {
     cloneElement,
+    FocusEvent,
     FunctionComponent,
     isValidElement,
     KeyboardEvent as ReactKeyboardEvent,
@@ -317,8 +318,8 @@ export const Tooltip: FunctionComponent<PropsWithChildren<TooltipProps>> = ({
         setIsClicked(true);
     }, [setIsClicked]);
 
-    const handleFocus = useCallback((): void => {
-        if (!isMobile) {
+    const handleFocus = useCallback((event: FocusEvent<HTMLSpanElement>): void => {
+        if (!isMobile && event.target.matches(':focus-visible')) {
             openTooltip();
         }
     }, [isMobile, openTooltip]);
