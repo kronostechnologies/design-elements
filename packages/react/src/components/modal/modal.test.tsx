@@ -47,20 +47,28 @@ describe('Modal', () => {
         expect(document.body.style.overflow).toBe('');
     });
 
-    it('removes its scoped focus listeners on close', () => {
+    it('focuses its content without installing a global focus listener', () => {
         const addListener = jest.spyOn(document, 'addEventListener');
-        const removeListener = jest.spyOn(document, 'removeEventListener');
-        const { rerender } = renderModal({ isOpen: true });
+
+        renderModal({ isOpen: true });
         const focusListeners = addListener.mock.calls
             .filter(([type, , capture]) => type === 'focus' && capture === true);
         addListener.mockRestore();
 
-        rerender(<Modal {...defaultTestProps} isOpen={false} />);
-        const removedListeners = [...removeListener.mock.calls];
-        removeListener.mockRestore();
+        expect(screen.getByRole('dialog')).toHaveFocus();
+        expect(focusListeners).toHaveLength(0);
+    });
 
-        expect(focusListeners).toHaveLength(1);
-        expect(removedListeners).toContainEqual(focusListeners[0]);
+    it('keeps focus on a child that receives focus on mount', () => {
+        const modal = (
+            <Modal {...defaultTestProps} isOpen>
+                <input aria-label="Details" ref={(input) => input?.focus()} />
+            </Modal>
+        );
+
+        renderWithProviders(modal, 'desktop');
+
+        expect(screen.getByRole('textbox', { name: 'Details' })).toHaveFocus();
     });
 
     it('onRequestClose callback is called when close-button is clicked', async () => {
