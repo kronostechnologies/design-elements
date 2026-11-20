@@ -1,9 +1,10 @@
-import { RenderResult, waitFor } from '@testing-library/react';
+import { RenderResult, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { renderWithProviders } from '../../test-utils/renderer';
 import { DeviceType } from '../device-context-provider';
+import { Tooltip } from '../tooltip';
 import { Modal } from './modal';
 import { ModalProps } from './types';
 
@@ -46,6 +47,30 @@ describe('Modal', () => {
         expect(document.body.style.overflow).toBe('');
     });
 
+    it('focuses its content without installing a global focus listener', () => {
+        const addListener = jest.spyOn(document, 'addEventListener');
+
+        renderModal({ isOpen: true });
+        const focusListeners = addListener.mock.calls
+            .filter(([type, , capture]) => type === 'focus' && capture === true);
+        addListener.mockRestore();
+
+        expect(screen.getByRole('dialog')).toHaveFocus();
+        expect(focusListeners).toHaveLength(0);
+    });
+
+    it('keeps focus on a child that receives focus on mount', () => {
+        const modal = (
+            <Modal {...defaultTestProps} isOpen>
+                <input aria-label="Details" ref={(input) => input?.focus()} />
+            </Modal>
+        );
+
+        renderWithProviders(modal, 'desktop');
+
+        expect(screen.getByRole('textbox', { name: 'Details' })).toHaveFocus();
+    });
+
     it('onRequestClose callback is called when close-button is clicked', async () => {
         const callback = jest.fn();
         const { getByTestId } = renderWithProviders(
@@ -82,6 +107,60 @@ describe('Modal', () => {
         await waitFor(() => {
             expect(onAfterClose).toHaveBeenCalledTimes(1);
         });
+    });
+
+    it.each([false, true])('restores focus and tooltip with focus-visible: %s', async (focusVisible) => {
+        const user = userEvent.setup();
+        const onAfterClose = jest.fn(() => document.activeElement);
+        const TestComponent = (): ReactElement => {
+            const [isOpen, setIsOpen] = useState(false);
+            return (
+                <>
+                    <Tooltip label="Open details">
+                        <button type="button" onClick={() => setIsOpen(true)}>Open modal</button>
+                    </Tooltip>
+                    <Modal
+                        {...defaultTestProps}
+                        isOpen={isOpen}
+                        onRequestClose={() => setIsOpen(false)}
+                        onAfterClose={onAfterClose}
+                    />
+                </>
+            );
+        };
+        renderWithProviders(<TestComponent />, 'desktop');
+        const trigger = screen.getByRole('button', { name: 'Open modal' });
+        const tooltip = screen.getByTestId('tooltip-content-container');
+        const focus = jest.spyOn(trigger, 'focus');
+        const matches = trigger.matches.bind(trigger);
+        // JSDOM does not distinguish pointer focus from keyboard focus.
+        jest.spyOn(trigger, 'matches')
+            .mockImplementation((selector) => (selector === ':focus-visible' ? focusVisible : matches(selector)));
+
+        if (focusVisible) {
+            await user.tab();
+            expect(tooltip).toBeVisible();
+            await user.keyboard('{Enter}');
+        } else {
+            await user.hover(trigger);
+            expect(tooltip).toBeVisible();
+            await user.click(trigger);
+        }
+
+        expect(screen.getByRole('dialog')).toHaveFocus();
+        expect(tooltip).not.toBeVisible();
+
+        await user.keyboard('{Escape}');
+
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(trigger).toHaveFocus();
+        expect(focus).toHaveBeenLastCalledWith({ focusVisible });
+        expect(onAfterClose).toHaveReturnedWith(trigger);
+        if (focusVisible) {
+            expect(tooltip).toBeVisible();
+        } else {
+            expect(tooltip).not.toBeVisible();
+        }
     });
 
     it('Matches snapshot (opened, desktop)', () => {

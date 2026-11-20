@@ -1,4 +1,13 @@
-import { FunctionComponent, PropsWithChildren, ReactElement, useCallback, useEffect, useState } from 'react';
+import {
+    FunctionComponent,
+    PropsWithChildren,
+    ReactElement,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from 'react';
 import ReactModal from 'react-modal';
 import { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
@@ -30,6 +39,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     const [mainRef, setMainRef] = useState<HTMLUListElement>();
     const [topScroll, setTopScroll] = useState(0);
     const [bottomScroll, setBottomScroll] = useState(0);
+    const previousFocus = useRef<{ element: HTMLElement | SVGElement, focusVisible: boolean }>();
     const { breakpoints, isMobile } = useDeviceContext();
     const mainRefCallback = useCallback((node: HTMLUListElement) => setMainRef(node), []);
     const { t } = useTranslation('modal');
@@ -55,6 +65,32 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             setTopScroll(0);
         }
     }, [mainRef]);
+
+    useLayoutEffect(() => {
+        // react-modal mounts the portal content in a subsequent commit.
+        if (isOpen) {
+            const element = document.activeElement;
+            if (element instanceof HTMLElement || element instanceof SVGElement) {
+                previousFocus.current = { element, focusVisible: element.matches(':focus-visible') };
+            }
+        }
+    }, [isOpen]);
+
+    const focusContent = useCallback((content: HTMLDivElement | null): void => {
+        if (content && !content.contains(content.ownerDocument.activeElement)) {
+            content.focus({ preventScroll: true });
+        }
+    }, []);
+
+    function handleAfterClose(): void {
+        const target = previousFocus.current;
+        previousFocus.current = undefined;
+
+        if (target?.element.isConnected) {
+            target.element.focus({ focusVisible: target.focusVisible });
+        }
+        onAfterClose?.();
+    }
 
     useEffect(() => {
         if (isOpen) {
@@ -106,13 +142,16 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             className={className}
             isOpen={isOpen}
             onAfterOpen={onAfterOpen}
-            onAfterClose={onAfterClose}
+            onAfterClose={handleAfterClose}
             onRequestClose={onRequestClose}
             parentSelector={parentSelector}
             role={role}
             style={customStyles}
             contentLabel={ariaLabel}
+            contentRef={focusContent}
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+            shouldFocusAfterRender={false}
+            shouldReturnFocusAfterClose={false}
             breakpoints={breakpoints}
             isMobile={isMobile}
             $width={width}
