@@ -67,7 +67,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     }, [mainRef]);
 
     useLayoutEffect(() => {
-        // react-modal focuses its content in a separate commit after opening.
+        // react-modal mounts the portal content in a subsequent commit.
         if (isOpen) {
             const element = document.activeElement;
             if (element instanceof HTMLElement || element instanceof SVGElement) {
@@ -75,6 +75,12 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             }
         }
     }, [isOpen]);
+
+    const focusContent = useCallback((content: HTMLDivElement | null): void => {
+        if (content && !content.contains(content.ownerDocument.activeElement)) {
+            content.focus({ preventScroll: true });
+        }
+    }, []);
 
     function handleAfterClose(): void {
         const target = previousFocus.current;
@@ -142,7 +148,9 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
             role={role}
             style={customStyles}
             contentLabel={ariaLabel}
+            contentRef={focusContent}
             shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+            shouldFocusAfterRender={false}
             shouldReturnFocusAfterClose={false}
             breakpoints={breakpoints}
             isMobile={isMobile}

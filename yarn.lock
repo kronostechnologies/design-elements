@@ -12803,21 +12803,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-modal@patch:react-modal@npm%3A3.16.3#~/.yarn/patches/react-modal-npm-3.16.3-b4b2408c94.patch":
-  version: 3.16.3
-  resolution: "react-modal@patch:react-modal@npm%3A3.16.3#~/.yarn/patches/react-modal-npm-3.16.3-b4b2408c94.patch::version=3.16.3&hash=4d83bf"
-  dependencies:
-    exenv: "npm:^1.2.0"
-    prop-types: "npm:^15.7.2"
-    react-lifecycles-compat: "npm:^3.0.0"
-    warning: "npm:^4.0.3"
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18 || ^19
-    react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18 || ^19
-  checksum: 10c0/dfa3e7ee43149a4fdd0aacf5141a4caeecc28fa00e889148b9b1d1923699a2d2a0d910fdd825e8654aadbe1e971d6892e90f120d3eea64fe2aa2ba03dac5c0c1
-  languageName: node
-  linkType: hard
-
 "react-popper-tooltip@npm:4.4.2":
   version: 4.4.2
   resolution: "react-popper-tooltip@npm:4.4.2"

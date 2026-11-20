@@ -16,7 +16,7 @@ The `Modal (core)` component allows you to easily set custom modals up in your a
 
 ## Accessibility
 
-When the modal closes, focus returns to the previously focused element if it is still on the page. Browsers that support the `focusVisible` focus option also restore whether that focus was visible before opening the modal.
+When the modal opens, focus moves to its content container unless an element inside it already has focus. When the modal closes, focus returns to the previously focused element if it is still on the page. Browsers that support the `focusVisible` focus option also restore whether that focus was visible before opening the modal.
 
 It is important for users of screenreaders that other page content be hidden (via the aria-hidden attribute) while the modal is open. To allow `Modal` to do this, you should set `appElement` prop to a query selector identifying the root of your app. For example, if your app content is located inside an element with the ID `root`, you should set the `appElement` prop like this:
 
