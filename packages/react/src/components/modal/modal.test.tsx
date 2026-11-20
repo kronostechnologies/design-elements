@@ -47,6 +47,22 @@ describe('Modal', () => {
         expect(document.body.style.overflow).toBe('');
     });
 
+    it('removes its scoped focus listeners on close', () => {
+        const addListener = jest.spyOn(document, 'addEventListener');
+        const removeListener = jest.spyOn(document, 'removeEventListener');
+        const { rerender } = renderModal({ isOpen: true });
+        const focusListeners = addListener.mock.calls
+            .filter(([type, , capture]) => type === 'focus' && capture === true);
+        addListener.mockRestore();
+
+        rerender(<Modal {...defaultTestProps} isOpen={false} />);
+        const removedListeners = [...removeListener.mock.calls];
+        removeListener.mockRestore();
+
+        expect(focusListeners).toHaveLength(1);
+        expect(removedListeners).toContainEqual(focusListeners[0]);
+    });
+
     it('onRequestClose callback is called when close-button is clicked', async () => {
         const callback = jest.fn();
         const { getByTestId } = renderWithProviders(

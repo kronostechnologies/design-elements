@@ -32,6 +32,7 @@
     "react-dom": "^18",
     "react-is": "^18",
     "react-docgen-typescript": "^2.0.0",
+    "react-modal@npm:3.16.3": "patch:react-modal@npm%3A3.16.3#~/.yarn/patches/react-modal-npm-3.16.3-b4b2408c94.patch",
     "webpack": "^5"
   },
   "packageManager": "yarn@4.18.1"
