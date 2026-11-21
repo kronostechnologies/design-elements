@@ -74,7 +74,7 @@
     "sass-loader": "17.1.0",
     "storybook": "8.6.19",
     "style-loader": "4.0.0",
-    "stylelint": "17.16.0",
+    "stylelint": "18.0.0",
     "ts-loader": "9.6.2",
     "typescript": "6.0.3",
     "webpack": "5.112.2",
