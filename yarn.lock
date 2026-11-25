@@ -2051,8 +2051,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@equisoft/design-elements-react@workspace:packages/react"
   dependencies:
-    "@equisoft/eslint-config": "npm:6.0.3"
-    "@equisoft/eslint-config-typescript-react": "npm:6.0.3"
+    "@equisoft/eslint-config": "npm:7.0.0"
+    "@equisoft/eslint-config-typescript-react": "npm:7.0.0"
     "@equisoft/typescript-config": "npm:2.0.1"
     "@floating-ui/react": "npm:0.27.20"
     "@floating-ui/react-dom": "npm:2.1.9"
@@ -2140,8 +2140,8 @@ __metadata:
     "@babel/preset-react": "npm:7.29.7"
     "@babel/preset-typescript": "npm:7.29.7"
     "@equisoft/design-elements-react": "workspace:*"
-    "@equisoft/eslint-config": "npm:6.0.3"
-    "@equisoft/eslint-config-typescript-react": "npm:6.0.3"
+    "@equisoft/eslint-config": "npm:7.0.0"
+    "@equisoft/eslint-config-typescript-react": "npm:7.0.0"
     "@equisoft/typescript-config": "npm:2.0.1"
     "@mdx-js/react": "npm:3.1.1"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
@@ -2202,15 +2202,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@equisoft/eslint-config-react@npm:6.0.3":
-  version: 6.0.3
-  resolution: "@equisoft/eslint-config-react@npm:6.0.3"
+"@equisoft/eslint-config-react@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@equisoft/eslint-config-react@npm:7.0.0"
   dependencies:
-    "@equisoft/eslint-config": "npm:6.0.3"
+    "@equisoft/eslint-config": "npm:7.0.0"
     eslint-config-airbnb: "npm:^19.0.4"
   peerDependencies:
     "@microsoft/eslint-formatter-sarif": ^3
-    "@stylistic/eslint-plugin": ^5
+    "@stylistic/eslint-plugin": ^6.0.0
     eslint: ^8
     eslint-import-resolver-node: ^0.3 || ^0.4.0
     eslint-plugin-import: ^2
@@ -2220,19 +2220,19 @@ __metadata:
     yargs: ^18.0.0
   bin:
     eq-eslint: eslint.js
-  checksum: 10c0/1384d401b904094b90b729468d5ab526bff27691aba4f50b82938cccbcaec6489bad28d2905baf25211ac3b4a5940a6f2405847d92792a349d6a5ae6aeca011b
+  checksum: 10c0/f663af0722a668869152e8dc487c36bd074a1f55a5384beccb0b2734b3659062cf00dc3a29ed9263bf85184db963e43fcdd4fb1f3dd43131783c50f287509a41
   languageName: node
   linkType: hard
 
-"@equisoft/eslint-config-typescript-react@npm:6.0.3":
-  version: 6.0.3
-  resolution: "@equisoft/eslint-config-typescript-react@npm:6.0.3"
+"@equisoft/eslint-config-typescript-react@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@equisoft/eslint-config-typescript-react@npm:7.0.0"
   dependencies:
-    "@equisoft/eslint-config-react": "npm:6.0.3"
-    "@equisoft/eslint-config-typescript": "npm:6.0.3"
+    "@equisoft/eslint-config-react": "npm:7.0.0"
+    "@equisoft/eslint-config-typescript": "npm:7.0.0"
   peerDependencies:
     "@microsoft/eslint-formatter-sarif": ^3
-    "@stylistic/eslint-plugin": ^5
+    "@stylistic/eslint-plugin": ^6.0.0
     "@typescript-eslint/eslint-plugin": ^8.0.0
     "@typescript-eslint/parser": ^8.0.0
     eslint: ^8
@@ -2245,18 +2245,18 @@ __metadata:
     yargs: ^18.0.0
   bin:
     eq-eslint: eslint.js
-  checksum: 10c0/c20dfc19975e41b9a74ebe84079a18534e0ba0872e15ea4a5f45dd88aefd5e563e21fccbca0418b464630c6311d6f89d5c1ad2cf74d04b278c7ed6baa73bae4f
+  checksum: 10c0/9ba638f29be34a3ae590e94aa5b80ecb9c5b8407b24c3199afb7568a324a7a9ef6235eee42b30684afbb4ab7ecb08a5e3b646278ac77d83b7c2a8a535e8bb128
   languageName: node
   linkType: hard
 
-"@equisoft/eslint-config-typescript@npm:6.0.3":
-  version: 6.0.3
-  resolution: "@equisoft/eslint-config-typescript@npm:6.0.3"
+"@equisoft/eslint-config-typescript@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@equisoft/eslint-config-typescript@npm:7.0.0"
   dependencies:
-    "@equisoft/eslint-config": "npm:6.0.3"
+    "@equisoft/eslint-config": "npm:7.0.0"
   peerDependencies:
     "@microsoft/eslint-formatter-sarif": ^3
-    "@stylistic/eslint-plugin": ^5
+    "@stylistic/eslint-plugin": ^6.0.0
     "@typescript-eslint/eslint-plugin": ^8.0.0
     "@typescript-eslint/parser": ^8.0.0
     eslint: ^8
@@ -2266,25 +2266,25 @@ __metadata:
     yargs: ^18.0.0
   bin:
     eq-eslint: eslint.js
-  checksum: 10c0/02b01fd4add71849b5d64eada1594919d95f2e03706db1536b3d7be25b19f67d331c2c5be519280f5dab176aed256cd43e760bd9fa09e808acba93d2f4aad95c
+  checksum: 10c0/d408a66ae866f09a6d02e51ce82d99e1f00861c31b1e07753a33a680c76a72fc0bfbff946a88ddb126077f88f24cbf9dd9bf38717758322d8e56ebc9e73d47d1
   languageName: node
   linkType: hard
 
-"@equisoft/eslint-config@npm:6.0.3":
-  version: 6.0.3
-  resolution: "@equisoft/eslint-config@npm:6.0.3"
+"@equisoft/eslint-config@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@equisoft/eslint-config@npm:7.0.0"
   dependencies:
     eslint-config-airbnb-base: "npm:^15.0.0"
   peerDependencies:
     "@microsoft/eslint-formatter-sarif": ^3
-    "@stylistic/eslint-plugin": ^5
+    "@stylistic/eslint-plugin": ^6.0.0
     eslint: ^8
     eslint-import-resolver-node: ^0.3 || ^0.4.0
     eslint-plugin-import: ^2
     yargs: ^18.0.0
   bin:
     eq-eslint: eslint.js
-  checksum: 10c0/4fc5b1cbe659a98b428e129441f281c821c49d1df31188761a9c67d4a012a99998dadace1a224d71cb763d2735ac3a7eed4be6480e7866639f3cd6928b16aa63
+  checksum: 10c0/2a9416592038574e3b73c30b9883673505bd147f78eef1b74670c8a0a53688341ea5ea494c17da40ea67bdfd5a6d02ba39350d6e74bea58e1140869f3a84d374
   languageName: node
   linkType: hard
 
@@ -8190,8 +8190,8 @@ __metadata:
     "@babel/preset-env": "npm:7.29.14"
     "@babel/preset-react": "npm:7.29.7"
     "@equisoft/design-elements-react": "workspace:*"
-    "@equisoft/eslint-config": "npm:6.0.3"
-    "@equisoft/eslint-config-typescript-react": "npm:6.0.3"
+    "@equisoft/eslint-config": "npm:7.0.0"
+    "@equisoft/eslint-config-typescript-react": "npm:7.0.0"
     "@equisoft/jest-utils": "npm:1.8.6"
     "@equisoft/react-test-utils": "npm:1.8.6"
     "@equisoft/stylelint-config": "npm:5.2.11"
