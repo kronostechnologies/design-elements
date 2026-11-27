@@ -11,6 +11,7 @@ import {
 import ReactModal from 'react-modal';
 import { useTheme } from 'styled-components';
 import { useTranslation } from '../../i18n/use-translation';
+import { activeElementIsInside } from '../../utils/dom';
 import { useDeviceContext } from '../device-context-provider';
 import { Footer, Header, Main, StyledCloseButton, StyledModal } from './styled';
 import type { ModalProps } from './types';
@@ -69,7 +70,10 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     useLayoutEffect(() => {
         // react-modal mounts the portal content in a subsequent commit.
         if (isOpen) {
-            const element = document.activeElement;
+            let element = document.activeElement;
+            while (element?.shadowRoot?.activeElement) {
+                element = element.shadowRoot.activeElement;
+            }
             if (element instanceof HTMLElement || element instanceof SVGElement) {
                 previousFocus.current = { element, focusVisible: element.matches(':focus-visible') };
             }
@@ -77,7 +81,7 @@ export const Modal: FunctionComponent<PropsWithChildren<ModalProps>> = ({
     }, [isOpen]);
 
     const focusContent = useCallback((content: HTMLDivElement | null): void => {
-        if (content && !content.contains(content.ownerDocument.activeElement)) {
+        if (content && !activeElementIsInside(content)) {
             content.focus({ preventScroll: true });
         }
     }, []);

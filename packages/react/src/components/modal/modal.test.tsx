@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { ReactElement, useState } from 'react';
 import { doNothing } from '../../test-utils/callbacks';
 import { renderWithProviders } from '../../test-utils/renderer';
+import { renderWithProviders as renderWithDesignSystem } from '../../test-utils/testing-library';
 import { DeviceType } from '../device-context-provider';
 import { Tooltip } from '../tooltip';
 import { Modal } from './modal';
@@ -109,9 +110,15 @@ describe('Modal', () => {
         });
     });
 
-    it.each([false, true])('restores focus and tooltip with focus-visible: %s', async (focusVisible) => {
+    it.each([
+        { input: 'mouse', focusVisible: false },
+        { input: 'keyboard', focusVisible: true },
+    ])('restores focus and tooltip after opening with $input', async ({ input, focusVisible }) => {
         const user = userEvent.setup();
-        const onAfterClose = jest.fn(() => document.activeElement);
+        let focusWhenClosed: Element | null = null;
+        const onAfterClose = jest.fn(() => {
+            focusWhenClosed = document.activeElement;
+        });
         const TestComponent = (): ReactElement => {
             const [isOpen, setIsOpen] = useState(false);
             return (
@@ -137,7 +144,7 @@ describe('Modal', () => {
         jest.spyOn(trigger, 'matches')
             .mockImplementation((selector) => (selector === ':focus-visible' ? focusVisible : matches(selector)));
 
-        if (focusVisible) {
+        if (input === 'keyboard') {
             await user.tab();
             expect(tooltip).toBeVisible();
             await user.keyboard('{Enter}');
@@ -155,12 +162,57 @@ describe('Modal', () => {
         expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
         expect(trigger).toHaveFocus();
         expect(focus).toHaveBeenLastCalledWith({ focusVisible });
-        expect(onAfterClose).toHaveReturnedWith(trigger);
+        expect(onAfterClose).toHaveBeenCalledTimes(1);
+        expect(focusWhenClosed).toBe(trigger);
         if (focusVisible) {
             expect(tooltip).toBeVisible();
         } else {
             expect(tooltip).not.toBeVisible();
         }
+    });
+
+    it('preserves and restores focus inside an isolated design system', async () => {
+        const user = userEvent.setup();
+        let portalTarget: HTMLDivElement;
+        const TestComponent = (): ReactElement => {
+            const [isOpen, setIsOpen] = useState(false);
+            return (
+                <>
+                    <button type="button" onClick={() => setIsOpen(true)}>Open modal</button>
+                    <div ref={(node) => { if (node) portalTarget = node; }} />
+                    <Modal
+                        {...defaultTestProps}
+                        isOpen={isOpen}
+                        parentSelector={() => portalTarget}
+                        onRequestClose={() => setIsOpen(false)}
+                    >
+                        <input aria-label="Details" ref={(input) => input?.focus()} />
+                    </Modal>
+                </>
+            );
+        };
+        const { container } = renderWithDesignSystem(
+            <TestComponent />,
+            undefined,
+            { isolateStyles: true, staticDevice: 'desktop' },
+        );
+        const shadowRoot = container.firstElementChild!.shadowRoot!;
+        const trigger = shadowRoot.querySelector('button')!;
+        const focus = jest.spyOn(trigger, 'focus');
+        const matches = trigger.matches.bind(trigger);
+        jest.spyOn(trigger, 'matches')
+            .mockImplementation((selector) => (selector === ':focus-visible' ? true : matches(selector)));
+
+        await user.click(trigger);
+        const input = shadowRoot.querySelector('input')!;
+
+        expect(shadowRoot.activeElement).toBe(input);
+
+        await user.keyboard('{Escape}');
+
+        expect(shadowRoot.querySelector('[role="dialog"]')).toBeNull();
+        expect(shadowRoot.activeElement).toBe(trigger);
+        expect(focus).toHaveBeenLastCalledWith({ focusVisible: true });
     });
 
     it('Matches snapshot (opened, desktop)', () => {
