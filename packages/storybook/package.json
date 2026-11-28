@@ -25,10 +25,10 @@
     "styled-components": "5.3.11"
   },
   "devDependencies": {
-    "@babel/core": "7.29.13",
-    "@babel/preset-env": "7.29.14",
-    "@babel/preset-react": "7.29.7",
-    "@babel/preset-typescript": "7.29.7",
+    "@babel/core": "8.1.3",
+    "@babel/preset-env": "8.0.7",
+    "@babel/preset-react": "8.0.1",
+    "@babel/preset-typescript": "8.0.7",
     "@equisoft/eslint-config": "7.0.0",
     "@equisoft/eslint-config-typescript-react": "7.0.0",
     "@equisoft/typescript-config": "2.0.1",
